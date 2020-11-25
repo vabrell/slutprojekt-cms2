@@ -6,6 +6,7 @@ Victor Abrell
 
 ## Uppgifter
 ### Todo
+- [ ] Vilka typer av produkter skall butiken sälja?
 - [ ] Bygga ett tema med anpassad design som matchar ert företag och de produkter ni säljer
 - [ ] Det skall finnas minst 10 produkt-kategorier
 - [ ] Det skall finnas minst 50 separata produkter
