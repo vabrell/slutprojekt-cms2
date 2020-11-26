@@ -6,12 +6,11 @@ Victor Abrell
 
 ## Uppgifter
 ### Todo
-- [ ] Vilka typer av produkter skall butiken sälja?
 - [ ] Bygga ett tema med anpassad design som matchar ert företag och de produkter ni säljer
-- [ ] Det skall finnas minst 10 produkt-kategorier
-- [ ] Det skall finnas minst 50 separata produkter
+- [ ] Det skall finnas minst 10 produkt-kategorier [David]
+- [ ] Det skall finnas minst 50 separata produkter [David]
   - [ ] Minst 20 av produkterna skall vara variabla produkter  
-  	*	(1 produkt med 5 varianter räknas som 1 produkt)
+  	* 1 produkt med 5 varianter räknas som 1 produkt
 - [ ] Webbsidan skall visa dessa eller snarliknande egenutvecklade funktioner
   - [ ] Ett bildspel som presenterar aktuella kampanjer
     * En kampanj kan representeras av en kategori med produkter
@@ -19,7 +18,7 @@ Victor Abrell
   - [ ] En listning av populära produkter
 	* Populära produkter skall baseras på hur många som köpt dem
   - [ ] En listning av utvalda (_featured_) produkter
-  - [ ] En listning av produkter som för tillfället har reapris
+  - [ ] En listning av produkter som för tillfället har reapris [Edwin]
 	* De skall visas med reapris och ordinarie pris
   - [ ] En puff för det senaste inlägget från bloggen
 - [ ] Det skall finnas en sida med villkor och regler
@@ -37,7 +36,7 @@ Victor Abrell
     - E-post
     - Meddelande
     - Bifoga fil
-- [ ] Ställ in så att e-handeln har moms enligt svenska regler
+- [ ] Ställ in så att e-handeln har moms enligt svenska regler [Victor]
 - [ ] Kunden skall kunna registrera sig på webbplatsen och använda de _mina sidor_ funktioner som följer med __WooCommerce__
   - [ ] De skall kunna byta lösenord
   - [ ] De skall kunna se tidigare order
@@ -50,7 +49,7 @@ Victor Abrell
     - [ ] Det skall gå att ställa in pris för varje fraktklass
     - [ ] Vikten på produkterna i varukorgen avgör vilket pris leveransen får
     - [ ] Avståndet ifrån lager till köpare påverkar priset på leveransen
-- [ ] Bygg ett eget plugin för betalning
+- [ ] Bygg ett eget plugin för betalning [Victor]
   - Betalningsmetoden skall vara _betalning via faktura_
     - [ ] För att få lov att betala via faktura måste användaren mata in sitt personnummer
     - [ ] Personnummer skall matas in i ett fält i kassan
@@ -61,7 +60,7 @@ Victor Abrell
   - E-handeln skall ha ett leveransalternativ för att _hämta upp leverans i butik_
     - [ ] I kassan skall man kunna välja i vilken butik man vill hämta ut sin order
     - [ ] I butikerna som kan väljas skall vara samma som listas på sidan med företagets butiker
-    - [ ] Detta leveransalternatic skall vara gratis vid order över ett visst belopp. Det skall gå att ställa in vilket belopp som gäller
+    - [ ] Detta leveransalternativ skall vara gratis vid order över ett visst belopp. Det skall gå att ställa in vilket belopp som gäller
     - [ ] Om man inte överstiger belopper skall leveransalternativet kosta och leveransavgiften skall gå att ställa in i admin
 - [ ] Test av e-handel
   - [ ] Genomför minst 10 test köp med varje betalningsmotod och leveransalternativ
@@ -78,3 +77,5 @@ Victor Abrell
   - [ ] Bilder skall använda sig av tumnaglar i lagom storlek, så att inte onödigt tunga bilder laddas in
 
 ### Klart
+- [x] Vilka typer av produkter skall butiken sälja?
+  - Musikinstrument
