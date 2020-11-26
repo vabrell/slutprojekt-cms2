@@ -55,13 +55,6 @@ Kopiera filerna i wordpress mappen till _sluprojekt-cms2_ mappen du klonade, sl�
     - [ ] Det skall gå att ställa in pris för varje fraktklass
     - [ ] Vikten på produkterna i varukorgen avgör vilket pris leveransen får
     - [ ] Avståndet ifrån lager till köpare påverkar priset på leveransen
-- [ ] Bygg ett eget plugin för betalning [Victor]
-  - Betalningsmetoden skall vara _betalning via faktura_
-    - [ ] För att få lov att betala via faktura måste användaren mata in sitt personnummer
-    - [ ] Personnummer skall matas in i ett fält i kassan
-      - [ ] Om inget personnummer angivits skall ett felmeddelande presenteras när man försöker genomföra betalning
-    - [ ] Personnumret skall valideras med hjälp av _Luhn-algoritmen_
-      - [ ] Om personnumret inte stämmer kommer ett felmeddelande att presenteras
 - [ ] Bygg ett till eget leveras plugin
   - E-handeln skall ha ett leveransalternativ för att _hämta upp leverans i butik_
     - [ ] I kassan skall man kunna välja i vilken butik man vill hämta ut sin order
@@ -75,6 +68,7 @@ Kopiera filerna i wordpress mappen till _sluprojekt-cms2_ mappen du klonade, sl�
 - [ ] Enhetstestning av egenutvecklade funktioner
   - [ ] Minst 4 av funktionerna i temat/plugins skall kunna enhetstestat
     - Detta kan göras med enhetstest-verktyg eller igenom ett test-plugin
+    - [x] Testar Luhn-algoritmen i _Invoice Payment Gateway_ pluginet
 ---
 - Övriga punkter
   - [ ] Webbplatsen som slutprojektet resulterar i skall ha en design som fungerar hela vägen ifrån _desktop_ till _mobil_, inklusive mellanlägen
@@ -86,3 +80,10 @@ Kopiera filerna i wordpress mappen till _sluprojekt-cms2_ mappen du klonade, sl�
 - [x] Vilka typer av produkter skall butiken sälja?
   - Musikinstrument
 - [x] Ställ in så att e-handeln har moms enligt svenska regler [Victor]
+- [x] Bygg ett eget plugin för betalning [Victor]
+  - Betalningsmetoden skall vara _betalning via faktura_
+    - [x] För att få lov att betala via faktura måste användaren mata in sitt personnummer
+    - [x] Personnummer skall matas in i ett fält i kassan
+      - [x] Om inget personnummer angivits skall ett felmeddelande presenteras när man försöker genomföra betalning
+    - [x] Personnumret skall valideras med hjälp av _Luhn-algoritmen_
+      - [x] Om personnumret inte stämmer kommer ett felmeddelande att presenteras
