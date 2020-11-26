@@ -1,4 +1,5 @@
 {
+	"type": "wordpress-plugin",
     "autoload": {
         "classmap": [
             "src/"
