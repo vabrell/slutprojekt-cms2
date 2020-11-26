@@ -4,6 +4,13 @@ David Kjellson
 Edwin Berg  
 Victor Abrell
 
+## Installation
+```
+git clone git@github.com:vabrell/slutprojekt-cms2.git
+```
+Ladda ner [Wordpress](https://sv.wordpress.org/download/).  
+Kopiera filerna i wordpress mappen till _sluprojekt-cms2_ mappen du klonade, slå samman mappar i fall den frågar om det.
+
 ## Uppgifter
 ### Todo
 - [ ] Bygga ett tema med anpassad design som matchar ert företag och de produkter ni säljer
