@@ -43,7 +43,6 @@ Kopiera filerna i wordpress mappen till _sluprojekt-cms2_ mappen du klonade, sl�
     - E-post
     - Meddelande
     - Bifoga fil
-- [ ] Ställ in så att e-handeln har moms enligt svenska regler [Victor]
 - [ ] Kunden skall kunna registrera sig på webbplatsen och använda de _mina sidor_ funktioner som följer med __WooCommerce__
   - [ ] De skall kunna byta lösenord
   - [ ] De skall kunna se tidigare order
@@ -86,3 +85,4 @@ Kopiera filerna i wordpress mappen till _sluprojekt-cms2_ mappen du klonade, sl�
 ### Klart
 - [x] Vilka typer av produkter skall butiken sälja?
   - Musikinstrument
+- [x] Ställ in så att e-handeln har moms enligt svenska regler [Victor]
