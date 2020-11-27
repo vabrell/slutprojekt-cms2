@@ -1,0 +1,21 @@
+name: PHPUnit Tests
+
+on:
+  push:
+    branches: [ main, actions/add-workflow ]
+  pull_request:
+    branches: [ main, actions/add-workflow ]
+
+jobs:
+ luhn-tests:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Composer dependencies
+        uses: php-actions/composer@v4
+        with:
+          args: --working-dir wp-content/plugins/wc-invoice-payment-gateway
+      - name: Run tests
+        working-directory: wp-content/plugins/wc-invoice-payment-gateway
+        run: vendor/bin/phpunit --bootstrap vendor/autoload.php tests
