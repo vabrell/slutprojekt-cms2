@@ -2,9 +2,9 @@ name: PHPUnit Tests
 
 on:
   push:
-    branches: [ main, actions/add-workflow ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, actions/add-workflow ]
+    branches: [ main ]
 
 jobs:
  luhn-tests:
