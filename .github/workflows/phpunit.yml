@@ -7,14 +7,15 @@ on:
     branches: [ main, actions/add-workflow ]
 
 jobs:
-  build-test:
+ test-luhn:
     runs-on: ubuntu-latest
 
     steps:
+      - working-directory: wp-content/plugins/wc-invoice-payment-gateway/
       - uses: actions/checkout@v2
-      - uses: php-actions/composer@v1 # or alternative dependency management
-      - name: Luhn
+      - uses: php-actions/composer@v1
+      - name: Luhn Tests
         uses: php-actions/phpunit@v1
         with:
-          bootstrap: wp-content/plugins/wc-invoice-payment-gateway/vendor/autoload.php
-          configuration: wp-content/plugins/wc-invoice-payment-gateway/tests
+          bootstrap: vendor/autoload.php
+          configuration: tests
