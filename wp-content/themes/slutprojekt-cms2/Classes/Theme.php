@@ -38,6 +38,8 @@ class Theme {
 		if (!get_option(self::OPTION_PREFIX . self::THEME_NAME)) {
 			// Run tax activation
 			self::activateWooCommerceTax();
+			// Run end user activation
+			self::activateEndUserRegistration();
 			// Set the theme active in options
 			update_option(self::OPTION_PREFIX . self::THEME_NAME, 1);
 		}
@@ -65,4 +67,14 @@ class Theme {
 			]);
 		}
 	}
+
+	/**
+	 * Activate WooCommerce end user registration and login
+	 */
+	static function activateEndUserRegistration() {
+		update_option("woocommerce_enable_myaccount_registration", "yes");
+		update_option("woocommerce_enable_signup_and_login_from_checkout", "yes");
+		update_option("woocommerce_enable_checkout_login_reminder", "yes");
+	}
+
 }
