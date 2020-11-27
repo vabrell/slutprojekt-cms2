@@ -17,7 +17,5 @@ jobs:
         with:
           args: --working-dir wp-content/plugins/wc-invoice-payment-gateway
       - name: Run tests
-        uses: php-actions/phpunit@v1
-        with:
-          args: --no-configuration tests
-          bootstrap: wp-content/plugins/wc-invoice-payment-gateway/vendor/autoload.php
+        working-directory: wp-content/plugins/wc-invoice-payment-gateway
+        run: vendor/bin/phpunit --bootstrap vendor/autoload.php tests
