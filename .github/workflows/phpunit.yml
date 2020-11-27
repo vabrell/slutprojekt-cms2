@@ -15,7 +15,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: php-actions/composer@v1
+      - name: Install Composer dependencies
+        uses: php-actions/composer@v4
+        with:
+          args: --working-dir wp-content/plugins/wc-invoice-payment-gateway
       - uses: php-actions/phpunit@v1
         with:
           bootstrap: vendor/autoload.php
