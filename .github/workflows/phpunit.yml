@@ -9,18 +9,18 @@ on:
 jobs:
  luhn-tests:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: wp-content/plugins/wc-invoice-payment-gateway
-
+    
     steps:
       - uses: actions/checkout@v2
       - name: Install Composer dependencies
         uses: php-actions/composer@v4
         with:
           args: --working-dir wp-content/plugins/wc-invoice-payment-gateway
-      - uses: php-actions/phpunit@v1
+      - name: Setup PHPUnit
+        uses: php-actions/phpunit@v1
         with:
+          args: --working-dir wp-content/plugins/wc-invoice-payment-gateway
           bootstrap: vendor/autoload.php
       - name: Run Luhn Tests
+        working-directory: wp-content/plugins/wc-invoice-payment-gateway
         run: phpunit tests
