@@ -7,17 +7,12 @@ on:
     branches: [ main, actions/add-workflow ]
 
 jobs:
-  build:
-
+  phpunit:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-
-    - name: GitHub Action for PHPUnit
-      # You may pin to the exact commit or the version.
-      # uses: owenvoke/phpunit-action@41a9b79e02fea917da3974de5272dd7ceac425b8
-      uses: owenvoke/phpunit-action@v1.0.0
-      with:
-        # User defined command
-        command: phpunit wp-content/plugins/wc-invoice-payment-gateway/tests
+      - uses: actions/checkout@v1
+      # For YAML Actions, use v1 or later
+      - uses: pxgamer/phpunit-action@master
+        with:
+          # If there isn't a PHPUnit config, specify files or directories to test
+          command: wp-content/plugins/wc-invoice-payment-gateway/tests/
