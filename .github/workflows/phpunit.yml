@@ -7,7 +7,7 @@ on:
     branches: [ main, actions/add-workflow ]
 
 jobs:
- test-luhn:
+ build-test:
     runs-on: ubuntu-latest
 
     steps:
