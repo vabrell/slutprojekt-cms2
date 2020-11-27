@@ -5,11 +5,14 @@ Edwin Berg
 Victor Abrell
 
 ## Installation
+1. Klona git repot
 ```
 git clone git@github.com:vabrell/slutprojekt-cms2.git
 ```
-Ladda ner [Wordpress](https://sv.wordpress.org/download/).  
-Kopiera filerna i wordpress mappen till _sluprojekt-cms2_ mappen du klonade, slå samman mappar i fall den frågar om det.
+2. Ladda ner [Wordpress](https://sv.wordpress.org/download/).
+3. Öppna wordpress.zip filen som laddades ner, och gå in i wordpress mappen.
+4. Kopiera filerna i wordpress mappen till _sluprojekt-cms2_ mappen du klonade, slå samman mappar i fall den frågar om det.
+   ![](copy-wp.png)
 
 ## Uppgifter
 ### Todo
