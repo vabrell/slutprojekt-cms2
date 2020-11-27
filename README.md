@@ -43,7 +43,7 @@ Kopiera filerna i wordpress mappen till _sluprojekt-cms2_ mappen du klonade, sl�
     - E-post
     - Meddelande
     - Bifoga fil
-- [ ] Kunden skall kunna registrera sig på webbplatsen och använda de _mina sidor_ funktioner som följer med __WooCommerce__
+- [ ] Kunden skall kunna registrera sig på webbplatsen och använda de _mina sidor_ funktioner som följer med __WooCommerce__ [Victor]
   - [ ] De skall kunna byta lösenord
   - [ ] De skall kunna se tidigare order
   - [ ] De skall kunna redigera sin faktura- och leverasadress
