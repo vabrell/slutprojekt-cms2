@@ -19,7 +19,7 @@ jobs:
       - name: Setup PHPUnit
         uses: php-actions/phpunit@v1
         with:
-          bootstrap: wp-content/plugins/wc-invoice-payment-gateway/vendor/autoload.php
+          args: --no-configuration
       - name: Run Luhn Tests
         working-directory: wp-content/plugins/wc-invoice-payment-gateway
-        run: phpunit tests
+        run: phpunit --bootstrap 'wp-content/plugins/wc-invoice-payment-gateway/vendor/autoload.php' tests
