@@ -41,6 +41,7 @@ wp-content/*
 
 # ignore these plugins
 wp-content/plugins/hello.php
+wp-content/plugins/easy-woocommerce-auto-sku-generator
 
 # ignore specific themes
 wp-content/themes/twenty*/
