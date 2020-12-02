@@ -5,11 +5,14 @@ Edwin Berg
 Victor Abrell
 
 ## Installation
+1. Klona git repot
 ```
 git clone git@github.com:vabrell/slutprojekt-cms2.git
 ```
-Ladda ner [Wordpress](https://sv.wordpress.org/download/).  
-Kopiera filerna i wordpress mappen till _sluprojekt-cms2_ mappen du klonade, slå samman mappar i fall den frågar om det.
+2. Ladda ner [Wordpress](https://sv.wordpress.org/download/).
+3. Öppna wordpress.zip filen som laddades ner, och gå in i wordpress mappen.
+4. Kopiera filerna i wordpress mappen till _sluprojekt-cms2_ mappen du klonade, slå samman mappar i fall den frågar om det.
+   ![](copy-wp.png)
 
 ## Uppgifter
 ### Todo
@@ -43,10 +46,6 @@ Kopiera filerna i wordpress mappen till _sluprojekt-cms2_ mappen du klonade, sl�
     - E-post
     - Meddelande
     - Bifoga fil
-- [ ] Kunden skall kunna registrera sig på webbplatsen och använda de _mina sidor_ funktioner som följer med __WooCommerce__ [Victor]
-  - [ ] De skall kunna byta lösenord
-  - [ ] De skall kunna se tidigare order
-  - [ ] De skall kunna redigera sin faktura- och leverasadress
 - [ ] Bygg ett eget plugin för leverasmetod
   - Det leveransalternativet skall vara _frakt med bud_
     - [ ] Detta alternativ skall alltid kosta och det skall vara möjligt att ställa in pris i admin
@@ -87,3 +86,7 @@ Kopiera filerna i wordpress mappen till _sluprojekt-cms2_ mappen du klonade, sl�
       - [x] Om inget personnummer angivits skall ett felmeddelande presenteras när man försöker genomföra betalning
     - [x] Personnumret skall valideras med hjälp av _Luhn-algoritmen_
       - [x] Om personnumret inte stämmer kommer ett felmeddelande att presenteras
+- [x] Kunden skall kunna registrera sig på webbplatsen och använda de _mina sidor_ funktioner som följer med __WooCommerce__ [Victor]
+  - [x] De skall kunna byta lösenord
+  - [x] De skall kunna se tidigare order
+  - [x] De skall kunna redigera sin faktura- och leverasadress
