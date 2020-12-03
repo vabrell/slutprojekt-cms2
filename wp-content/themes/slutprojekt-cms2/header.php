@@ -1,6 +1,3 @@
-<?php
-require get_theme_file_path("/Classes/class-wp-bootstrap-navwalker.php");
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

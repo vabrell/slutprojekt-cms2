@@ -1,43 +1,52 @@
-.woocommerce {
-	.col-1 {
-		max-width: unset !important;
+.container {
+	background-color: $light;
+	padding: 2rem 1rem .5rem 1rem;
+	border-radius: .3rem;
+	margin-bottom: 1rem;
 
-		.form-row {
-			display: block;
+	a {
+		color: $secondary;
+	}
+
+	.woocommerce {
+		.col-1 {
+			max-width: unset !important;
+
+			.form-row {
+				display: block;
+			}
 		}
-	}
-	.col-2 {
-		max-width: unset !important;
-	}
+		.col-2 {
+			max-width: unset !important;
+		}
 
-	button {
-		background-color: $primary !important;
-		color: $light;
-	}
+		button, a.button {
+			background-color: $primary !important;
+			color: $light;
+		}
 
-	input, textarea, .select2-selection.select2-selection--single{
-		padding: .5rem 1rem !important;
-		border: 1px solid #aaa !important;
-		border-radius: .2rem !important;
-		height: unset !important;
-		margin: 0 .5rem !important;
+		input, textarea, .select2-selection.select2-selection--single{
+			padding: .5rem 1rem !important;
+			border: 1px solid #aaa !important;
+			border-radius: .2rem !important;
+			height: unset !important;
+			margin: 0 .5rem !important;
 
-		.select2-selection__arrow {
-			top: 25% !important;
-			right: 15px !important;
+			.select2-selection__arrow {
+				top: 25% !important;
+				right: 15px !important;
 
-			b {
-				border-width: 8px 8px 0 8px !important;
+				b {
+					border-width: 8px 8px 0 8px !important;
+				}
 			}
 		}
 	}
-}
 
-#order_comments_field {
-	display: block !important;
-}
+	#order_comments_field {
+		display: block !important;
+	}
 
-.woocommerce-account{ 
 	.woocommerce-MyAccount-navigation {
 		background-color: $primary;
 		padding: 1rem;
@@ -69,8 +78,21 @@
 		display: block;
 	}
 
-	button {
+	button, a.button {
 		background-color: $primary !important;
 		color: $light !important;
+	}
+
+	.product {
+		.related {
+			padding: 2rem 2rem 0 2rem;
+			background-color: $dark;
+			border-radius: .2rem;
+
+			h2 {
+				color: $light;
+				margin-bottom: 1rem;
+			}
+		}
 	}
 }
