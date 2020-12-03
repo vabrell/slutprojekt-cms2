@@ -16,7 +16,8 @@ git clone git@github.com:vabrell/slutprojekt-cms2.git
 
 ## Uppgifter
 ### Todo
-- [ ] Bygga ett tema med anpassad design som matchar ert företag och de produkter ni säljer
+
+- [ ] Bygga ett tema med anpassad design som matchar ert företag och de produkter ni säljer [Victor]
 - [ ] Webbsidan skall visa dessa eller snarliknande egenutvecklade funktioner
   - [ ] Ett bildspel som presenterar aktuella kampanjer
     * En kampanj kan representeras av en kategori med produkter
