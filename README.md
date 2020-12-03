@@ -17,10 +17,6 @@ git clone git@github.com:vabrell/slutprojekt-cms2.git
 ## Uppgifter
 ### Todo
 - [ ] Bygga ett tema med anpassad design som matchar ert företag och de produkter ni säljer
-- [ ] Det skall finnas minst 10 produkt-kategorier [David]
-- [ ] Det skall finnas minst 50 separata produkter [David]
-  - [ ] Minst 20 av produkterna skall vara variabla produkter  
-  	* 1 produkt med 5 varianter räknas som 1 produkt
 - [ ] Webbsidan skall visa dessa eller snarliknande egenutvecklade funktioner
   - [ ] Ett bildspel som presenterar aktuella kampanjer
     * En kampanj kan representeras av en kategori med produkter
@@ -90,3 +86,7 @@ git clone git@github.com:vabrell/slutprojekt-cms2.git
   - [x] De skall kunna byta lösenord
   - [x] De skall kunna se tidigare order
   - [x] De skall kunna redigera sin faktura- och leverasadress
+  - [x] Det skall finnas minst 10 produkt-kategorier [David]
+- [x] Det skall finnas minst 50 separata produkter [David]
+  - [x] Minst 20 av produkterna skall vara variabla produkter  
+  	* 1 produkt med 5 varianter räknas som 1 produkt
