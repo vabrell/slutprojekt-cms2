@@ -34,7 +34,7 @@ git clone git@github.com:vabrell/slutprojekt-cms2.git
 - [ ] Det skall finnas en sida som listar företagets butiker
   - [ ] Butikerna skall skapas med hjälp av en _Custom Post Type_
   - [ ] I redigeringsläge ska det finnas ett fält för plats, och på sidan för butiken skll man kunna se var butiken är på en karta
-- [ ] Det skall finns en kontaktsida med följande funktioner
+- [ ] Det skall finns en kontaktsida med följande funktioner [David]
   - [ ] En karta som visar var företaget har sitt huvudkontor
   - [ ] Ett formulär med följande fält
     - Ärende (möjligt att välja _kontakt_, _reklamation_ eller _faktura_)
@@ -86,7 +86,7 @@ git clone git@github.com:vabrell/slutprojekt-cms2.git
   - [x] De skall kunna byta lösenord
   - [x] De skall kunna se tidigare order
   - [x] De skall kunna redigera sin faktura- och leverasadress
-  - [x] Det skall finnas minst 10 produkt-kategorier [David]
+- [x] Det skall finnas minst 10 produkt-kategorier [David]
 - [x] Det skall finnas minst 50 separata produkter [David]
   - [x] Minst 20 av produkterna skall vara variabla produkter  
   	* 1 produkt med 5 varianter räknas som 1 produkt
