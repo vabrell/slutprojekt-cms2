@@ -7,4 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'InvoiceGateway' => $baseDir . '/src/InvoiceGateway.php',
+    'Luhn' => $baseDir . '/src/Luhn.php',
 );

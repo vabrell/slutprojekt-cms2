@@ -1,5 +1,4 @@
 <?php
-defined("ABSPATH") || exit;
 
 // Verify that WooCommerce is installed
 if (class_exists("WooCommerce")) {

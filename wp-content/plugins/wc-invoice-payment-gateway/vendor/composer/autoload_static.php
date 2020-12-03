@@ -4,16 +4,18 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit3ddb100640c63648d32a191caddf3818
+class ComposerStaticInitabf5c0697f40c298a08e3ef38e605d87
 {
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'InvoiceGateway' => __DIR__ . '/../..' . '/src/InvoiceGateway.php',
+        'Luhn' => __DIR__ . '/../..' . '/src/Luhn.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInit3ddb100640c63648d32a191caddf3818::$classMap;
+            $loader->classMap = ComposerStaticInitabf5c0697f40c298a08e3ef38e605d87::$classMap;
 
         }, null, ClassLoader::class);
     }

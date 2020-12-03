@@ -15,8 +15,8 @@ define("PLUGIN_PATH", plugin_dir_path(__FILE__));
 add_action( 'plugins_loaded', 'ipg_init_gateway_class' );
 function ipg_init_gateway_class() {
 	load_plugin_textdomain("ipg", false, basename( dirname( __FILE__ ) ) . "/languages/");
-	if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
-		require __DIR__ . '/vendor/autoload.php';
+	if ( is_readable( PLUGIN_PATH . '/vendor/autoload.php' ) ) {
+		require PLUGIN_PATH . '/vendor/autoload.php';
 	}
 }
 
