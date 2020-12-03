@@ -1,5 +1,4 @@
 <?php
-
 namespace SPC2;
 
 defined("ABSPATH") || exit;
@@ -14,6 +13,15 @@ class Theme
 	public function __construct()
 	{
 		add_action("switch_theme", [$this, "deactivateTheme"]);
+
+		add_action("wp_enqueue_scripts", [$this, "loadStylesAndScripts"]);
+	}
+
+	/**
+	 * Load theme styles and scripts
+	 */
+	public function loadStylesAndScripts() {
+		wp_enqueue_style("slutprojekt-cms2-style", get_theme_file_uri("dist/slutprojekt-cms2.min.css"));
 	}
 
 	/**
