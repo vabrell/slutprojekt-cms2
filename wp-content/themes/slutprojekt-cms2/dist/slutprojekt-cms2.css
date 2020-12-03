@@ -9663,6 +9663,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .woocommerce button {
   background-color: #111e29 !important;
+  color: #f8f9fa;
 }
 
 .woocommerce input, .woocommerce textarea, .woocommerce .select2-selection.select2-selection--single {
@@ -9684,6 +9685,42 @@ a.text-dark:hover, a.text-dark:focus {
 
 #order_comments_field {
   display: block !important;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation {
+  background-color: #111e29;
+  padding: 1rem;
+  width: 20%;
+  line-height: 2rem;
+  border-radius: .2rem;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation ul {
+  list-style-type: none;
+  margin: unset;
+  padding: unset;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation a {
+  color: #f8f9fa;
+}
+
+.woocommerce-account .woocommerce-MyAccount-content {
+  padding: 1rem;
+  width: 78%;
+}
+
+.woocommerce-account .woocommerce-MyAccount-content a {
+  color: #6c757d;
+}
+
+.woocommerce-account .form-row {
+  display: block;
+}
+
+.woocommerce-account button {
+  background-color: #111e29 !important;
+  color: #f8f9fa !important;
 }
 
 /*# sourceMappingURL=slutprojekt-cms2.css.map */

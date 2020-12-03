@@ -12,6 +12,7 @@
 
 	button {
 		background-color: $primary !important;
+		color: $light;
 	}
 
 	input, textarea, .select2-selection.select2-selection--single{
@@ -34,4 +35,42 @@
 
 #order_comments_field {
 	display: block !important;
+}
+
+.woocommerce-account{ 
+	.woocommerce-MyAccount-navigation {
+		background-color: $primary;
+		padding: 1rem;
+		width: 20%;
+		line-height: 2rem;
+		border-radius: .2rem;
+
+		ul {
+			list-style-type: none;
+			margin: unset;
+			padding: unset;
+		}
+
+		a {
+			color: $light;
+		}
+	}
+
+	.woocommerce-MyAccount-content {
+		padding: 1rem;
+		width: 78%;
+
+		a {
+			color: $secondary;
+		}
+	}
+
+	.form-row {
+		display: block;
+	}
+
+	button {
+		background-color: $primary !important;
+		color: $light !important;
+	}
 }
