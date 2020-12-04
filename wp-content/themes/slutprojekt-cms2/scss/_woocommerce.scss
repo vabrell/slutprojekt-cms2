@@ -8,6 +8,20 @@
 		color: $secondary;
 	}
 
+	a.search-item {
+		text-decoration: none;
+		display: block;
+
+		&:hover {
+			background-color: rgba($color: $primary, $alpha: .03);
+			color: $primary;
+		}
+
+		.price {
+			color: #77a464;
+		}
+	}
+
 	.woocommerce {
 		.col-1 {
 			max-width: unset !important;
@@ -25,7 +39,7 @@
 			color: $light;
 		}
 
-		input, textarea, .select2-selection.select2-selection--single{
+		input, textarea, .woocommerce-ordering > select, .select2-selection.select2-selection--single{
 			padding: .5rem 1rem !important;
 			border: 1px solid #aaa !important;
 			border-radius: .2rem !important;

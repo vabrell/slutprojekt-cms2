@@ -9664,6 +9664,20 @@ body {
   color: #6c757d;
 }
 
+.container a.search-item {
+  text-decoration: none;
+  display: block;
+}
+
+.container a.search-item:hover {
+  background-color: rgba(17, 30, 41, 0.03);
+  color: #111e29;
+}
+
+.container a.search-item .price {
+  color: #77a464;
+}
+
 .container .woocommerce .col-1 {
   max-width: unset !important;
 }
@@ -9681,7 +9695,7 @@ body {
   color: #f8f9fa;
 }
 
-.container .woocommerce input, .container .woocommerce textarea, .container .woocommerce .select2-selection.select2-selection--single {
+.container .woocommerce input, .container .woocommerce textarea, .container .woocommerce .woocommerce-ordering > select, .container .woocommerce .select2-selection.select2-selection--single {
   padding: .5rem 1rem !important;
   border: 1px solid #aaa !important;
   border-radius: .2rem !important;
@@ -9689,12 +9703,12 @@ body {
   margin: 0 .5rem !important;
 }
 
-.container .woocommerce input .select2-selection__arrow, .container .woocommerce textarea .select2-selection__arrow, .container .woocommerce .select2-selection.select2-selection--single .select2-selection__arrow {
+.container .woocommerce input .select2-selection__arrow, .container .woocommerce textarea .select2-selection__arrow, .container .woocommerce .woocommerce-ordering > select .select2-selection__arrow, .container .woocommerce .select2-selection.select2-selection--single .select2-selection__arrow {
   top: 25% !important;
   right: 15px !important;
 }
 
-.container .woocommerce input .select2-selection__arrow b, .container .woocommerce textarea .select2-selection__arrow b, .container .woocommerce .select2-selection.select2-selection--single .select2-selection__arrow b {
+.container .woocommerce input .select2-selection__arrow b, .container .woocommerce textarea .select2-selection__arrow b, .container .woocommerce .woocommerce-ordering > select .select2-selection__arrow b, .container .woocommerce .select2-selection.select2-selection--single .select2-selection__arrow b {
   border-width: 8px 8px 0 8px !important;
 }
 
