@@ -2,7 +2,7 @@
 get_header();
 
 ?>
-<h3 class="mb-4">Söker efter: <strong><?php echo get_search_query(); ?></strong></h3>
+<h3 class="mb-4"><?php _e("Searching for", "spc2"); ?>: <strong><?php echo get_search_query(); ?></strong></h3>
 <?php
 if (have_posts()) {
 	while(have_posts()) {

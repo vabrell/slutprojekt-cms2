@@ -3,9 +3,9 @@
 		class="form-control mr-sm-2"
 		type="search"
 		name="s"
-		placeholder="<?php _e("Search", "spc2"); ?>"
+		placeholder="<?php _e("Search"); ?>"
 		aria-label="Search"
 		value="<?php the_search_query(); ?>"
 	>
-	<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	<button class="btn btn-outline-success my-2 my-sm-0" type="submit"><?php _e("Search"); ?></button>
 </form>

@@ -1,0 +1,7 @@
+#: single.php:17
+msgid "by"
+msgstr "av"
+
+#: search.php:5
+msgid "Searching for"
+msgstr "Söker efter"

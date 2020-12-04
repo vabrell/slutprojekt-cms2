@@ -15,6 +15,7 @@ class Theme
 		add_action("switch_theme", [$this, "deactivateTheme"]);
 
 		add_action("wp_enqueue_scripts", [$this, "loadStylesAndScripts"]);
+		add_action("after_setup_theme", [$this, "loadTextdomain"]);
 	}
 
 	/**
@@ -22,6 +23,13 @@ class Theme
 	 */
 	public function loadStylesAndScripts() {
 		wp_enqueue_style("slutprojekt-cms2-style", get_theme_file_uri("dist/slutprojekt-cms2.min.css"));
+	}
+
+	/**
+	 * Load theme textdomain
+	 */
+	public function loadTextdomain() {
+		load_theme_textdomain("spc2", get_template_directory() . '/languages' );
 	}
 
 	/**
