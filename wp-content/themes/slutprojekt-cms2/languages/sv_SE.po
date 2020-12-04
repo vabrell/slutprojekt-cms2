@@ -5,3 +5,7 @@ msgstr "av"
 #: search.php:5
 msgid "Searching for"
 msgstr "Söker efter"
+
+#: home.php:31
+msgid "No blog posts could be found"
+msgstr "Inga blogg poster kunde hittas"

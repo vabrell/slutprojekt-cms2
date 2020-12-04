@@ -28,7 +28,7 @@ if (have_posts()) {
 		<?php
 	}
 } else {
-	echo __("No blog posts could be found.", "spc2");
+	echo __("No blog posts could be found", "spc2");
 }
 
 get_footer();
