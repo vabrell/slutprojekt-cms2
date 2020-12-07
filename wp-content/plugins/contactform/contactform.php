@@ -7,6 +7,8 @@
  * Description: Add contact information
  **/
 
+require 'acf-template.php';
+
 class Contactform
 {
   function contactform()
@@ -14,7 +16,7 @@ class Contactform
     ob_start();
     if (have_rows('kontaktformular', 'options')) {
 ?>
-      <form action="">
+      <form action="<?php echo admin_url('admin-ajax.php'); ?>">
         <?php while (have_rows('kontaktformular', 'options')) {
           the_row();
           if (get_row_layout() === 'radioknappar') { ?>
@@ -62,6 +64,7 @@ class Contactform
             <div class="text-center">
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><?php the_sub_field('etikett'); ?></button>
             </div>
+            <input type="hidden" value="cms2_contactform">
         <?php }
         } ?>
       </form>
@@ -100,4 +103,4 @@ class Contactform
   }
 }
 
-$contact = new Contactform();
+$contact = new Contactform(); ?>
