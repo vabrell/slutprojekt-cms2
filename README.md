@@ -44,11 +44,11 @@ git clone git@github.com:vabrell/slutprojekt-cms2.git
     - Bifoga fil
 - [ ] Bygg ett eget plugin för leverasmetod [Victor]
   - Det leveransalternativet skall vara _frakt med bud_
-    - [ ] Detta alternativ skall alltid kosta och det skall vara möjligt att ställa in pris i admin
+    - [x] Detta alternativ skall alltid kosta och det skall vara möjligt att ställa in pris i admin
     - [x] På e-handeln skall det vara inställt för 3 olika fraktklasser
-    - [ ] Baserat på vilken fraktklass de produkter man har i varukorgen så skall leveransen kosta olika mycket
-    - [ ] Det skall gå att ställa in pris för varje fraktklass
-    - [ ] Vikten på produkterna i varukorgen avgör vilket pris leveransen får
+    - [x] Baserat på vilken fraktklass de produkter man har i varukorgen så skall leveransen kosta olika mycket
+    - [x] Det skall gå att ställa in pris för varje fraktklass
+    - [x] Vikten på produkterna i varukorgen avgör vilket pris leveransen får
     - [ ] Avståndet ifrån lager till köpare påverkar priset på leveransen
 - [ ] Bygg ett till eget leveras plugin
   - E-handeln skall ha ett leveransalternativ för att _hämta upp leverans i butik_

@@ -1,7 +1,6 @@
 <?php
-namespace WDPG;
 
-class Plugin {
+class WDPG_Plugin {
 	const SHIPPING_CLASSES = [
 		[
 			"name" => "Liten",
