@@ -7,7 +7,7 @@
  * Description: Add contact information
  **/
 
-// require 'acf-template.php';
+require 'acf-template.php';
 
 class Contactform
 {
