@@ -14,7 +14,10 @@ class Contactform
   function contactform()
   {
     ob_start();
-    if (have_rows('kontaktformular', 'options')) {
+    if (isset($_REQUEST['thankyou'])) {
+      echo '<h2 style="text-align: center;">Tack för ditt meddelande!</h2>';
+    }
+    if (have_rows('kontaktformular', 'options') && !isset($_REQUEST['thankyou'])) {
 ?>
       <form action="<?php echo admin_url('admin-ajax.php'); ?>">
         <?php while (have_rows('kontaktformular', 'options')) {
@@ -63,9 +66,9 @@ class Contactform
         <input type="hidden" value="cms2_contactform" name="action">
       </form>
 <?php
-      if (isset($_REQUEST['sent'])) {
-        echo 'Tack för ditt meddelande!';
-      }
+      // if (isset($_REQUEST['sent'])) {
+      //   wp_redirect($_SERVER['HTTP_REFERER']);
+      // }
     }
     $contactcode = ob_get_clean();
     return $contactcode;
@@ -82,6 +85,7 @@ class Contactform
     );
     update_post_meta($post_id, 'e-post', $_REQUEST['cms2_email']);
     update_post_meta($post_id, 'radioknapp', $_REQUEST['cms2_radio']);
+    wp_redirect($_SERVER['HTTP_REFERER'] . '?thankyou=yes');
     die();
   }
 
