@@ -27,14 +27,6 @@ Victor Abrell
 - [ ] Det skall finnas en sida som listar företagets butiker [David]
   - [ ] Butikerna skall skapas med hjälp av en _Custom Post Type_
   - [ ] I redigeringsläge ska det finnas ett fält för plats, och på sidan för butiken skll man kunna se var butiken är på en karta
-- [ ] Det skall finns en kontaktsida med följande funktioner [David]
-  - [ ] En karta som visar var företaget har sitt huvudkontor
-  - [ ] Ett formulär med följande fält
-    - Ärende (möjligt att välja _kontakt_, _reklamation_ eller _faktura_)
-    - Namn
-    - E-post
-    - Meddelande
-    - Bifoga fil
 - [ ] Bygg ett till eget leveras plugin
   - E-handeln skall ha ett leveransalternativ för att _hämta upp leverans i butik_
     - [ ] I kassan skall man kunna välja i vilken butik man vill hämta ut sin order
@@ -84,3 +76,11 @@ Victor Abrell
     - [x] Det skall gå att ställa in pris för varje fraktklass
     - [x] Vikten på produkterna i varukorgen avgör vilket pris leveransen får
     - [x] Avståndet ifrån lager till köpare påverkar priset på leveransen
+- [x] Det skall finns en kontaktsida med följande funktioner [David]
+  - [x] En karta som visar var företaget har sitt huvudkontor
+  - [x] Ett formulär med följande fält
+    - Ärende (möjligt att välja _kontakt_, _reklamation_ eller _faktura_)
+    - Namn
+    - E-post
+    - Meddelande
+    - Bifoga fil
