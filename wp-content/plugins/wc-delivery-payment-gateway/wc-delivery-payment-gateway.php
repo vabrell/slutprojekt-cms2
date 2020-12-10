@@ -33,6 +33,9 @@ function wdpg_init_gateway_class() {
 	}
 }
 
+/**
+ * Add shipping fee if gateway is selected
+ */
 add_action('woocommerce_cart_calculate_fees', function() {
 	if (is_admin() && !defined('DOING_AJAX')) {
 		return;
@@ -40,11 +43,12 @@ add_action('woocommerce_cart_calculate_fees', function() {
 
 	$gateway = new WDPG_DeliveryGateway;
 	$shippingPrice = $gateway->getShippingPrice();
-	$weightAndPrice = $gateway->getWeightAndPrice();
+	$weightPrice = $gateway->getWeightPrice();
+	$distancePrice = $gateway->getDistancePrice();
 	
 	$chosen_payment_method = WC()->session->get("chosen_payment_method");
 	if ($chosen_payment_method == "wdpg_delivery") {
-		WC()->cart->add_fee(__("Shipping", "wdpg"), $weightAndPrice["price"] + $shippingPrice);
+		WC()->cart->add_fee(__("Shipping", "wdpg"), $weightPrice + $shippingPrice + $distancePrice);
 	}
 });
 
