@@ -6,8 +6,8 @@ if (have_posts()) {
 	$title = get_the_title();
 	echo "<h1>{$title}</h1>";
 	if (has_post_thumbnail()) {
-		echo "<div class='my-3'>";
-			the_post_thumbnail();
+		echo "<div class='my-3 spc2-image'>";
+			the_post_thumbnail("woocommerce_single");
 		echo "</div>";
 	}
 	the_content();
