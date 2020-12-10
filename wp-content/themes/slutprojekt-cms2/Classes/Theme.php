@@ -23,6 +23,7 @@ class Theme
 	 */
 	public function loadStylesAndScripts() {
 		wp_enqueue_style("slutprojekt-cms2-style", get_theme_file_uri("dist/slutprojekt-cms2.min.css"));
+		wp_enqueue_script("slutprojekt-cms2-script", get_theme_file_uri("dist/slutprojekt-cms2.js"), [], "1.0", true);
 	}
 
 	/**

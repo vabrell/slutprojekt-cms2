@@ -14,11 +14,11 @@ if (have_posts()) {
 			<div class="row align-items-center my-4 p-2">
 				<?php if (get_post_type() === "product") { ?>
 					<?php if (has_post_thumbnail()) { ?>
-						<div class="col-2">
+						<div class="col-4 col-md-3 col-lg-2">
 							<?php the_post_thumbnail("shop_thumbnail"); ?>
 						</div>
 					<?php } ?>
-					<div class="col-8">
+					<div class="col-5 col-md-6 col-lg-8">
 						<?php the_title(); ?>
 					</div>
 					<div class="col-2 price">
@@ -30,13 +30,13 @@ if (have_posts()) {
 					<?php
 					if (has_post_thumbnail()) {
 					?>
-						<div class="col-2">
+						<div class="col-4 col-md-3 col-lg-2">
 							<?php the_post_thumbnail("shop_thumbnail"); ?>
 						</div>
 					<?php
 					} 
 					?>
-					<div class="col-8">
+					<div class="col-5 col-md-6 col-lg-8">
 						<?php the_title(); ?>
 					</div>
 				<?php

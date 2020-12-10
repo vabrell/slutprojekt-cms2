@@ -9763,4 +9763,8 @@ body {
   margin-bottom: 1rem;
 }
 
+.container .spc2-image img {
+  max-width: 100% !important;
+}
+
 /*# sourceMappingURL=slutprojekt-cms2.css.map */
