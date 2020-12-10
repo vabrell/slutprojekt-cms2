@@ -30,8 +30,8 @@
 wp-content/plugins/woocommerce
 !wp-content/
 !README.md
-!copy-wp.png
 !.gitignore
+!wiki
 
 # ignore everything in the "wp-content" directory, except:
 # "mu-plugins", "plugins", "themes" directory

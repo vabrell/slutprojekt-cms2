@@ -82,17 +82,17 @@ if (class_exists("WooCommerce")) {
 		 * Fields validation
 		 */
 		public function validate_fields() {
-			// Extract variables from $_POST
-			extract($_POST);
+			// Get SSN from POST
+			$ssn = $_POST["social_security_number"];
 	
-			if (empty($social_security_number)) {
+			if (empty($ssn)) {
 				wc_add_notice(__("Social security number must be filled in", "ipg"), "error");
 				return false;
 			}
 	
 			$luhn = new Luhn;
 	
-			if (!$luhn->checkSSN($social_security_number)) {
+			if (!$luhn->checkSSN($ssn)) {
 				wc_add_notice(__("Social security number is not valid", "ipg"), "error");
 				return false;
 			}

@@ -1,0 +1,136 @@
+#: wc-delivery-payment-gateway:55
+msgid "Shipping"
+msgstr "Frakt"
+
+
+#: WDPG_DeliveryGateway:17
+#: WDPG_DeliveryGateway:70
+msgid "Delivery by carrier"
+msgstr "Leverans med bud"
+
+#: WDPG_DeliveryGateway:18
+msgid "Use the Delivery by carrier payment method"
+msgstr "Använd Leverans med bud betalningsmetoden"
+
+#: WDPG_DeliveryGateway:54
+msgid "Enable/Disable"
+msgstr "Aktivera/Avaktivera"
+
+#: WDPG_DeliveryGateway:55
+msgid "Enable Delivery by carrier gateway"
+msgstr "Aktivera Leverans med bud betalningsmetoden"
+
+#: WDPG_DeliveryGateway:61
+msgid "key"
+msgstr "nyckel"
+
+#: WDPG_DeliveryGateway:63
+msgid "Without this key the distance calculation will not work"
+msgstr "Utan denna nyckel kan inte distans kostnaden räknas ut"
+
+#: WDPG_DeliveryGateway:67
+msgid "Title"
+msgstr "Titel"
+
+#: WDPG_DeliveryGateway:69
+msgid "This controls the title of the payment method that the user sees during checkout"
+msgstr "Detta kontrollerar titeln på betalningsmetoden som användaren ser vid utchecking"
+
+#: WDPG_DeliveryGateway:74
+msgid "Description"
+msgstr "Beskrivning"
+
+#: WDPG_DeliveryGateway:76
+msgid "This controls the description of the payment method that the user sees during checkout"
+msgstr "Detta kontrollerar beskrivningen av betalningsmetoden som användaren ser vid utchecking"
+
+#: WDPG_DeliveryGateway:77
+msgid "Pay when you recieve the order"
+msgstr "Betala när du får din beställning"
+
+#: WDPG_DeliveryGateway:80
+msgid "Warehouse address"
+msgstr "Varuhus adress"
+
+#: WDPG_DeliveryGateway:82
+msgid "This sets the from location when the delivery distance is calculated"
+msgstr "Detta sätter var ifrån distansen räknas ut för distanskostnaden"
+
+#: WDPG_DeliveryGateway:85
+#: WDPG_DeliveryGateway:91
+#: WDPG_DeliveryGateway:97
+#: WDPG_DeliveryGateway:103
+#: WDPG_DeliveryGateway:109
+#: WDPG_DeliveryGateway:115
+msgid "Price"
+msgstr "Pris"
+
+#: WDPG_DeliveryGateway:87
+msgid "This sets the set price for the delivery"
+msgstr "Detta sätter den fasta kostnaden för leveransen"
+
+#: WDPG_DeliveryGateway:91
+msgid "Small"
+msgstr "Liten"
+
+#: WDPG_DeliveryGateway:93
+msgid "This sets the price for small delivery"
+msgstr "Detta sätter kostnaden för mindre leveranser"
+
+#: WDPG_DeliveryGateway:97
+msgid "Medium"
+msgstr "Mellan"
+
+#: WDPG_DeliveryGateway:99
+msgid "This sets the price for medium delivery"
+msgstr "Detta sätter kostnaden för mellan leveranser"
+
+#: WDPG_DeliveryGateway:103
+msgid "Large"
+msgstr "Stor"
+
+#: WDPG_DeliveryGateway:105
+msgid "This sets the price for large delivery"
+msgstr "Detta sätter kostnaden för stora leveranser"
+
+#: WDPG_DeliveryGateway:109
+msgid "Weight"
+msgstr "Vikt"
+
+#: WDPG_DeliveryGateway:111
+msgid "This sets the price for the delivery weight"
+msgstr "Detta sätter kostnaden för leverans vikten"
+
+#: WDPG_DeliveryGateway:115
+msgid "Distance"
+msgstr "Distans"
+
+#: WDPG_DeliveryGateway:118
+msgid "This sets the price for the delivery distance"
+msgstr "Detta sätter kostnaden för leverans vikten"
+
+#: WDPG_DeliveryGateway:139
+msgid "Price for delivery by carrier"
+msgstr "Pris för leverans med bud"
+
+#: WDPG_DeliveryGateway:140
+msgid "Price for distance"
+msgstr "Pris för distans"
+
+#: WDPG_DeliveryGateway:141
+msgid "Price for weight of delivery"
+msgstr "Pris för vikten av leveransen"
+
+#: WDPG_DeliveryGateway:142
+msgid "Total shipping"
+msgstr "Total frakt"
+
+#: WDPG_DeliveryGateway:144
+msgid "We could not calculate the shipping cost as you address and/or city is missing or invalid"
+msgstr "Vi kunde inte kalkulera fraktkostnaden då din adress och/eller stad saknas eller inte är korrekt"
+
+
+
+#: WDPG_DeliveryGateway:162
+msgid "Thank you for your order!\nWe will process the order as fast as possible"
+msgstr "Tack för din beställning!\nVi kommer hantera din beställning så fort vi kan"
