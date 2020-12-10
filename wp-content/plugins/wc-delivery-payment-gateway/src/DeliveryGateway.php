@@ -239,7 +239,7 @@ if (class_exists("WooCommerce")) {
 				$url = sprintf($this->apiUrl,
 					$this->apiKey, // The authentication key for MapQuest
 					json_encode(["street" => $this->warehouseLocation]), // The _from_ location
-					json_encode(["street" => $customerFullAddress]), // The _to_ location
+					json_encode(["street" => $customerFullAddress]) // The _to_ location
 				);
 				// Fetch new distance data
 				$response = wp_remote_get($url);
