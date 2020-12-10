@@ -4,15 +4,8 @@ David Kjellson
 Edwin Berg  
 Victor Abrell
 
-## Installation
-1. Klona git repot
-```
-git clone git@github.com:vabrell/slutprojekt-cms2.git
-```
-2. Ladda ner [Wordpress](https://sv.wordpress.org/download/).
-3. Öppna wordpress.zip filen som laddades ner, och gå in i wordpress mappen.
-4. Kopiera filerna i wordpress mappen till _sluprojekt-cms2_ mappen du klonade, slå samman mappar i fall den frågar om det.
-   ![](copy-wp.png)
+## Guider
+[Installation](wiki/installation.md)
 
 ## Uppgifter
 ### Todo
@@ -31,7 +24,7 @@ git clone git@github.com:vabrell/slutprojekt-cms2.git
 - [ ] Det skall finnas en blogg där företaget publicerar inlägg om nya och kommande produkter
   - [ ] Fyll på med 5 inlägg
   - [ ] Inläggen skall ha länkar till relaterade produkter
-- [ ] Det skall finnas en sida som listar företagets butiker
+- [ ] Det skall finnas en sida som listar företagets butiker [David]
   - [ ] Butikerna skall skapas med hjälp av en _Custom Post Type_
   - [ ] I redigeringsläge ska det finnas ett fält för plats, och på sidan för butiken skll man kunna se var butiken är på en karta
 - [ ] Det skall finns en kontaktsida med följande funktioner [David]
@@ -42,14 +35,6 @@ git clone git@github.com:vabrell/slutprojekt-cms2.git
     - E-post
     - Meddelande
     - Bifoga fil
-- [ ] Bygg ett eget plugin för leverasmetod [Victor]
-  - Det leveransalternativet skall vara _frakt med bud_
-    - [ ] Detta alternativ skall alltid kosta och det skall vara möjligt att ställa in pris i admin
-    - [ ] På e-handeln skall det vara inställt för 3 olika fraktklasser
-    - [ ] Baserat på vilken fraktklass de produkter man har i varukorgen så skall leveransen kosta olika mycket
-    - [ ] Det skall gå att ställa in pris för varje fraktklass
-    - [ ] Vikten på produkterna i varukorgen avgör vilket pris leveransen får
-    - [ ] Avståndet ifrån lager till köpare påverkar priset på leveransen
 - [ ] Bygg ett till eget leveras plugin
   - E-handeln skall ha ett leveransalternativ för att _hämta upp leverans i butik_
     - [ ] I kassan skall man kunna välja i vilken butik man vill hämta ut sin order
@@ -91,3 +76,11 @@ git clone git@github.com:vabrell/slutprojekt-cms2.git
   - [x] Minst 20 av produkterna skall vara variabla produkter  
   	* 1 produkt med 5 varianter räknas som 1 produkt
 - [x] Bygga ett tema med anpassad design som matchar ert företag och de produkter ni säljer [Victor]
+- [x] Bygg ett eget plugin för leverasmetod [Victor]
+  - Det leveransalternativet skall vara _frakt med bud_
+    - [x] Detta alternativ skall alltid kosta och det skall vara möjligt att ställa in pris i admin
+    - [x] På e-handeln skall det vara inställt för 3 olika fraktklasser
+    - [x] Baserat på vilken fraktklass de produkter man har i varukorgen så skall leveransen kosta olika mycket
+    - [x] Det skall gå att ställa in pris för varje fraktklass
+    - [x] Vikten på produkterna i varukorgen avgör vilket pris leveransen får
+    - [x] Avståndet ifrån lager till köpare påverkar priset på leveransen
