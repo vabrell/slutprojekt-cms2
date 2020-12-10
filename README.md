@@ -18,13 +18,13 @@ git clone git@github.com:vabrell/slutprojekt-cms2.git
 ### Todo
 
 - [ ] Webbsidan skall visa dessa eller snarliknande egenutvecklade funktioner
-  - [ ] Ett bildspel som presenterar aktuella kampanjer
-    * En kampanj kan representeras av en kategori med produkter
-    * Eller en rabattkod som ger rabatt
+  - [ ] Ett bildspel som presenterar aktuella kampanjer [Edwin]
+    * En kampanj kan representeras av en kategori med produkter [Edwin]
+    * Eller en rabattkod som ger rabatt [Edwin]
   - [ ] En listning av populära produkter
 	* Populära produkter skall baseras på hur många som köpt dem
-  - [ ] En listning av utvalda (_featured_) produkter
-  - [ ] En listning av produkter som för tillfället har reapris [Edwin]
+  - [ ] En listning av utvalda (_featured_) produkter 
+  - [ ] En listning av produkter som för tillfället har reapris 
 	* De skall visas med reapris och ordinarie pris
   - [ ] En puff för det senaste inlägget från bloggen
 - [ ] Det skall finnas en sida med villkor och regler
