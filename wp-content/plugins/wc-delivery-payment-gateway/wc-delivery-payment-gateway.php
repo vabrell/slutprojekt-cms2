@@ -38,39 +38,27 @@ add_action('woocommerce_cart_calculate_fees', function() {
 		return;
 	}
 
-
 	$gateway = new WDPG_DeliveryGateway;
-	$shippingClasses = [];
-	foreach(WC()->cart->get_cart() as $item) {
-		$slug = get_term($item["data"]->get_shipping_class_id())->slug;
-		if (!in_array($slug, $shippingClasses)) {
-			$shippingClasses[] = $slug;
-		}
-	}
-	$shippingPrice = 0;
-	if (in_array("large", $shippingClasses)) {
-		$shippingPrice = $gateway->largePrice;
-	} else if (in_array("medium", $shippingClasses)) {
-		$shippingPrice = $gateway->mediumPrice;
-	} else if (in_array("small", $shippingClasses)) {
-		$shippingPrice = $gateway->smallPrice;
-	}
-
-	$cartWeight = WC()->cart->get_cart_contents_weight();
-	$weightPrice = $cartWeight * $gateway->weightPrice;
+	$shippingPrice = $gateway->getShippingPrice();
+	$weightAndPrice = $gateway->getWeightAndPrice();
 	
-	$chosen_payment_method = WC()->session->get('chosen_payment_method');
-	if ($chosen_payment_method == 'wdpg_delivery') {
-		WC()->cart->add_fee('Shipping', $weightPrice + $shippingPrice);
+	$chosen_payment_method = WC()->session->get("chosen_payment_method");
+	if ($chosen_payment_method == "wdpg_delivery") {
+		WC()->cart->add_fee(__("Shipping", "wdpg"), $weightAndPrice["price"] + $shippingPrice);
 	}
 });
- 
-add_action('woocommerce_review_order_before_payment', function() {
-	?><script type="text/javascript">
+
+/**
+ * Reload checkout form when payment method is changed
+ */
+add_action("woocommerce_review_order_before_payment", function() {
+?>
+	<script type="text/javascript">
 		(function($){
-			$('form.checkout').on('change', 'input[name^="payment_method"]', function() {
-				$('body').trigger('update_checkout');
+			$("form.checkout").on("change", "input[name^='payment_method']", function() {
+				$("body").trigger("update_checkout");
 			});
 		})(jQuery);
-	</script><?php
+	</script>
+<?php
 });

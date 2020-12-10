@@ -12,6 +12,8 @@ if (class_exists("WooCommerce")) {
 			$this->has_fields = true; // Custom form
 			$this->method_title = __("Delivery", "wdpg");
 			$this->method_description = __("Use the Delivery payment method", "wdpg"); // will be displayed on the options page
+
+			$this->currencySymbol = get_woocommerce_currency_symbol();
 		
 			// Support
 			$this->supports = array(
@@ -111,33 +113,14 @@ if (class_exists("WooCommerce")) {
 			}
 		 
 			// Display the form
-			$shippingClasses = [];
-			foreach(WC()->cart->get_cart() as $item) {
-				$slug = get_term($item["data"]->get_shipping_class_id())->slug;
-				if (!in_array($slug, $shippingClasses)) {
-					$shippingClasses[] = $slug;
-				}
-			}
-			$shippingPrice = 0;
-			if (in_array("large", $shippingClasses)) {
-				$shippingPrice = $this->largePrice;
-			} else if (in_array("medium", $shippingClasses)) {
-				$shippingPrice = $this->mediumPrice;
-			} else if (in_array("small", $shippingClasses)) {
-				$shippingPrice = $this->smallPrice;
-			}
+			$shippingPrice = $this->getShippingPrice();
+			$weightAndPrice = $this->getWeightAndPrice();
 
-			$cartWeight = WC()->cart->get_cart_contents_weight();
-			$weightPrice = $cartWeight * $this->weightPrice;
-			$currencySymbol = get_woocommerce_currency_symbol();
-			$cart_total = WC()->cart->get_cart_contents_total();
-			$cart_total += WC()->cart->get_cart_contents_tax();
+			$totals = $weightAndPrice["price"] + $shippingPrice;
 
-			$totals = $cart_total + $weightPrice + $shippingPrice;
-
-			echo "<p><strong>" . __("Price for delivery") . "</strong>: {$shippingPrice}{$currencySymbol}</p>";
-			echo "<p><strong>" . __("Price for weight of delivery") . "</strong>: {$cartWeight}kg * {$this->weightPrice}{$currencySymbol} = {$weightPrice}{$currencySymbol}</p>";
-			echo "<p><strong id='total_shipping'>" . __("Total") . "</strong>: {$totals}{$currencySymbol}</p>";
+			echo "<p><strong>" . __("Price for delivery") . "</strong>: {$shippingPrice}{$this->currencySymbol}</p>";
+			echo "<p><strong>" . __("Price for weight of delivery") . "</strong>: {$weightAndPrice["weight"]}kg * {$this->weightPrice}{$this->currencySymbol} = {$weightAndPrice["price"]}{$this->currencySymbol}</p>";
+			echo "<p><strong>" . __("Total shipping") . "</strong>: {$totals}{$this->currencySymbol}</p>";
 		}
 	
 		/**
@@ -171,6 +154,49 @@ if (class_exists("WooCommerce")) {
 				'result' => 'success',
 				'redirect' => $this->get_return_url($order)
 			);
+		}
+
+		/**
+		 * HELPERS
+		 */
+
+		/**
+		 * Get the shipping price from the cart items
+		 * 
+		 * @return mixed int|float
+		 */
+		public function getShippingPrice() {
+			$shippingClasses = [];
+			foreach(WC()->cart->get_cart() as $item) {
+				$slug = get_term($item["data"]->get_shipping_class_id())->slug;
+				if (!in_array($slug, $shippingClasses)) {
+					$shippingClasses[] = $slug;
+				}
+			}
+			$shippingPrice = 0;
+			if (in_array("large", $shippingClasses)) {
+				$shippingPrice = $this->largePrice;
+			} else if (in_array("medium", $shippingClasses)) {
+				$shippingPrice = $this->mediumPrice;
+			} else if (in_array("small", $shippingClasses)) {
+				$shippingPrice = $this->smallPrice;
+			}
+
+			return $shippingPrice;
+		}
+
+		/**
+		 * Get the cart weight shipping price from cart items
+		 * 
+		 * @return mixed int|float
+		 */
+		public function getWeightAndPrice() {
+			$cartWeight = WC()->cart->get_cart_contents_weight();
+
+			return  [
+				"weight" => $cartWeight,
+				"price" => $cartWeight * $this->weightPrice,
+			];
 		}
 	}
 }
