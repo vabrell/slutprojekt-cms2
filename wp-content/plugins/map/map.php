@@ -7,7 +7,7 @@
  * Description: Display map
  **/
 
-require 'acf-template.php';
+// require 'acf-template.php';
 
 class Map
 {
@@ -18,7 +18,7 @@ class Map
       while (have_rows('karta', 'options')) {
         the_row(); ?>
         <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
-          <iframe src="https://www.google.com/maps/embed/v1/place?key=<?php the_sub_field('api-nyckel'); ?>&q=<?php the_sub_field('gata'); ?>+<?php the_sub_field('gatunummer'); ?>,+<?php the_sub_field('postnummer'); ?>+<?php the_sub_field('stad'); ?>" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <iframe src="https://www.google.com/maps/embed/v1/place?key=<?php echo get_field('api-nyckel', 'options'); ?>&q=<?php the_sub_field('gata'); ?>+<?php the_sub_field('gatunummer'); ?>,+<?php the_sub_field('postnummer'); ?>+<?php the_sub_field('stad'); ?>" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
     <?php }
     }

@@ -7,7 +7,7 @@
  * Description: Add contact information
  **/
 
-require 'acf-template.php';
+// require 'acf-template.php';
 
 class Contactform
 {
@@ -56,6 +56,12 @@ class Contactform
                 <textarea class="form-control" name="<?php the_sub_field('datahandtag'); ?>" placeholder="<?php the_sub_field('etikett'); ?>" rows="3"></textarea>
               </div>
             </div>
+            <!-- <div class="form-group row">
+              <label for="" class="col-sm-2 col-form-label">ss</label>
+              <div class="col-sm-10">
+                <input type="file" name="" id="">
+              </div>
+            </div> -->
           <?php }
           if (get_row_layout() === 'knapp') { ?>
             <div class="text-center">
@@ -66,9 +72,6 @@ class Contactform
         <input type="hidden" value="cms2_contactform" name="action">
       </form>
 <?php
-      // if (isset($_REQUEST['sent'])) {
-      //   wp_redirect($_SERVER['HTTP_REFERER']);
-      // }
     }
     $contactcode = ob_get_clean();
     return $contactcode;
