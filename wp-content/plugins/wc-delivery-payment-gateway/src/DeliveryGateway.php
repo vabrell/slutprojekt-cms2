@@ -1,14 +1,12 @@
 <?php
 // Verify that WooCommerce is installed
 
-use Automattic\WooCommerce\Admin\API\Products;
-
 if (class_exists("WooCommerce")) {
 	class WDPG_DeliveryGateway extends WC_Payment_Gateway {
 
 		const CACHE_PREFIX = "DISTANCE_CACHE_";
 		private $apiUrl = "http://open.mapquestapi.com/directions/v2/route?key=%s&from=%s&to=%s";
-		private string $apiKey = "";
+		private $apiKey;
 
 		public function __construct() {
 			$this->id = "wdpg_delivery"; // payment gateway plugin ID
