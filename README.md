@@ -24,7 +24,7 @@ Victor Abrell
 - [ ] Det skall finnas en blogg där företaget publicerar inlägg om nya och kommande produkter
   - [ ] Fyll på med 5 inlägg
   - [ ] Inläggen skall ha länkar till relaterade produkter
-- [ ] Det skall finnas en sida som listar företagets butiker
+- [ ] Det skall finnas en sida som listar företagets butiker [David]
   - [ ] Butikerna skall skapas med hjälp av en _Custom Post Type_
   - [ ] I redigeringsläge ska det finnas ett fält för plats, och på sidan för butiken skll man kunna se var butiken är på en karta
 - [ ] Det skall finns en kontaktsida med följande funktioner [David]
