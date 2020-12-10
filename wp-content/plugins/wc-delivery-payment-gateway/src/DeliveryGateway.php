@@ -8,7 +8,7 @@ if (class_exists("WooCommerce")) {
 
 		const CACHE_PREFIX = "DISTANCE_CACHE_";
 		private $apiUrl = "http://open.mapquestapi.com/directions/v2/route?key=%s&from=%s&to=%s";
-		private string $apiKey;
+		private string $apiKey = "";
 
 		public function __construct() {
 			$this->id = "wdpg_delivery"; // payment gateway plugin ID
