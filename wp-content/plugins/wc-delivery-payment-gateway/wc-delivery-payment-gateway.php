@@ -4,6 +4,8 @@
  * Author: Victor Abrell
  * Version: 1.0
  * Description: Adds Delivery payment option
+ * Text Domain: wdpg
+ * Domain Path: /languages
  */
 defined("ABSPATH") || exit;
 
@@ -26,6 +28,8 @@ add_action("plugins_loaded", "wdpg_init_gateway_class");
 function wdpg_init_gateway_class() {
 	require WDPG_PATH . "/src/DeliveryGateway.php";
 
+	load_plugin_textdomain("wdpg", false, basename( dirname( __FILE__ ) ) . "/languages/");
+
 	add_filter("woocommerce_payment_gateways", "wdpg_add_delivery_gateway");
 	function wdpg_add_delivery_gateway( $gateways ) {
 		$gateways[] = "WDPG_DeliveryGateway";
@@ -36,8 +40,8 @@ function wdpg_init_gateway_class() {
 /**
  * Add shipping fee if gateway is selected
  */
-add_action('woocommerce_cart_calculate_fees', function() {
-	if (is_admin() && !defined('DOING_AJAX')) {
+add_action("woocommerce_cart_calculate_fees", function() {
+	if (is_admin() && !defined("DOING_AJAX")) {
 		return;
 	}
 
