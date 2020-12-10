@@ -7,7 +7,7 @@
  * Description: Add contact information
  **/
 
-require 'acf-template.php';
+// require 'acf-template.php';
 
 class Contactform
 {
@@ -23,12 +23,13 @@ class Contactform
             <fieldset class="form-group">
               <div class="row">
                 <legend class="col-form-label col-sm-2 pt-0"><?php the_sub_field('etikett'); ?></legend>
+                <?php $variabel = get_sub_field('datahandtag'); ?>
                 <div class="col-sm-10">
                   <?php while (have_rows('radioknappar')) {
                     the_row(); ?>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="errand" id="contact" value="contact">
-                      <label class="form-check-label" for="contact">
+                      <input class="form-check-input" type="radio" name="<?php echo $variabel; ?>" value="<?php the_sub_field('knappetikett') ?>">
+                      <label class="form-check-label" for="<?php the_sub_field('knappetikett') ?>">
                         <?php the_sub_field('knappetikett') ?>
                       </label>
                     </div>
@@ -39,24 +40,17 @@ class Contactform
           <?php }
           if (get_row_layout() === 'textfalt') { ?>
             <div class="form-group row">
-              <label for="name" class="col-sm-2 col-form-label"><?php the_sub_field('etikett'); ?></label>
+              <label for="<?php the_sub_field('etikett'); ?>" class="col-sm-2 col-form-label"><?php the_sub_field('etikett'); ?></label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="name" placeholder="<?php the_sub_field('etikett'); ?>">
+                <input type="text" class="form-control" name="<?php the_sub_field('datahandtag'); ?>" placeholder="<?php the_sub_field('etikett'); ?>">
               </div>
             </div>
-          <?php } ?>
-          <!-- <div class="form-group row">
-          <label for="email" class="col-sm-2 col-form-label">E-post</label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="email" placeholder="E-post">
-          </div>
-        </div> -->
-          <?php
+          <?php }
           if (get_row_layout() === 'textarea') { ?>
             <div class="form-group row">
-              <label for="message" class="col-sm-2 col-form-label"><?php the_sub_field('etikett'); ?></label>
+              <label for="<?php the_sub_field('etikett'); ?>" class="col-sm-2 col-form-label"><?php the_sub_field('etikett'); ?></label>
               <div class="col-sm-10">
-                <textarea class="form-control" id="message" placeholder="<?php the_sub_field('etikett'); ?>" rows="3"></textarea>
+                <textarea class="form-control" name="<?php the_sub_field('datahandtag'); ?>" placeholder="<?php the_sub_field('etikett'); ?>" rows="3"></textarea>
               </div>
             </div>
           <?php }
@@ -64,14 +58,31 @@ class Contactform
             <div class="text-center">
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><?php the_sub_field('etikett'); ?></button>
             </div>
-            <input type="hidden" value="cms2_contactform">
         <?php }
         } ?>
+        <input type="hidden" value="cms2_contactform" name="action">
       </form>
 <?php
+      if (isset($_REQUEST['sent'])) {
+        echo 'Tack för ditt meddelande!';
+      }
     }
     $contactcode = ob_get_clean();
     return $contactcode;
+  }
+
+  function insertpost()
+  {
+    $post_id = wp_insert_post(
+      [
+        'post_title' => $_REQUEST['cms2_name'],
+        'post_content' => $_REQUEST['cms2_message'],
+        'post_type' => 'arenden'
+      ]
+    );
+    update_post_meta($post_id, 'e-post', $_REQUEST['cms2_email']);
+    update_post_meta($post_id, 'radioknapp', $_REQUEST['cms2_radio']);
+    die();
   }
 
   function options()
@@ -98,6 +109,8 @@ class Contactform
   public function __construct()
   {
     add_action('init', [$this, 'options']);
+    add_action('init', [$this, 'messages']);
+    add_action('wp_ajax_cms2_contactform', [$this, 'insertpost']);
     // Skriv [contactform] som kortkod för att infoga.
     add_shortcode('contactform', [$this, 'contactform']);
   }
