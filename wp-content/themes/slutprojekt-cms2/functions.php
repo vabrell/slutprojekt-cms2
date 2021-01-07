@@ -16,6 +16,30 @@ $menus = new SPC2\Menus;
 // Run the WooCommerce Hooks
 $wooComHooks = new SPC2\WooCommerceHooks;
 
+function butiker()
+{
+  $labels = [
+    'name' => 'Butiker',
+    'singular_name' => 'Butik',
+    'menu_name' => 'Butiker',
+    'add_new_item' => 'Lägg till butik',
+    'add_new' => 'Lägg till',
+    'edit_item' => 'Redigera',
+    'update_item' => 'Uppdatera'
+  ];
+  $args = [
+    'labels' => 'butiker',
+    'labels' => $labels,
+    'supports' => [
+      'custom-fields'
+    ],
+    'public' => true,
+    'has_archive' => true,
+  ];
+  register_post_type('butiker', $args);
+}
+add_action('init', 'butiker');
+
 /**
  * Theme support
  */
