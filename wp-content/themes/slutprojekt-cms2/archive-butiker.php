@@ -4,7 +4,7 @@ get_header();
 
 while (have_posts()) {
   the_post();
-  echo '<h1>' . get_the_title() . '</h1>';
+  echo '<h1>Våra butiker</h1>';
 
   if (have_rows('karta')) {
     while (have_rows('karta')) {
