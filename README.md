@@ -25,8 +25,8 @@ Victor Abrell
   - [ ] Fyll på med 5 inlägg
   - [ ] Inläggen skall ha länkar till relaterade produkter
 - [ ] Det skall finnas en sida som listar företagets butiker [David]
-  - [ ] Butikerna skall skapas med hjälp av en _Custom Post Type_
-  - [ ] I redigeringsläge ska det finnas ett fält för plats, och på sidan för butiken skll man kunna se var butiken är på en karta
+  - [x] Butikerna skall skapas med hjälp av en _Custom Post Type_
+  - [x] I redigeringsläge ska det finnas ett fält för plats, och på sidan för butiken skll man kunna se var butiken är på en karta
 - [ ] Bygg ett till eget leveras plugin
   - E-handeln skall ha ett leveransalternativ för att _hämta upp leverans i butik_
     - [ ] I kassan skall man kunna välja i vilken butik man vill hämta ut sin order
