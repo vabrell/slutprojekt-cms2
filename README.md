@@ -14,7 +14,7 @@ Victor Abrell
   - [x] Ett bildspel som presenterar aktuella kampanjer
   [x]  * En kampanj kan representeras av en kategori med produkter
     * Eller en rabattkod som ger rabatt
-  - [ ] En listning av populära produkter
+  - [x] En listning av populära produkter
 	* Populära produkter skall baseras på hur många som köpt dem
   - [ ] En listning av utvalda (_featured_) produkter 
   - [ ] En listning av produkter som för tillfället har reapris 
