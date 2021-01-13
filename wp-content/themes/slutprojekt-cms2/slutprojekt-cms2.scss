@@ -1,9 +1,14 @@
 $primary: #111e29 !default;
+$primary-opacity: rgba(17, 30, 41, 0.3) !default;
 
 @import "node_modules/bootstrap-scss/bootstrap.scss";
 
 body {
-	background-color: $dark;
+  background-color: $dark;
+}
+
+.bg-primary-opacity {
+  background-color: $primary-opacity !important;
 }
 
 @import "scss/_woocommerce.scss"

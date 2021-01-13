@@ -9653,6 +9653,10 @@ body {
   background-color: #343a40;
 }
 
+.bg-primary-opacity {
+  background-color: rgba(17, 30, 41, 0.3) !important;
+}
+
 .container {
   background-color: #f8f9fa;
   padding: 2rem 1rem .5rem 1rem;
