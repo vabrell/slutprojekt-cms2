@@ -12,7 +12,16 @@ class Pickup
   function pickupalt()
   {
     ob_start(); ?>
-    <h1>God dag</h1>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+      <label class="form-check-label" for="inlineCheckbox1">Hämta i butik</label>
+    </div>
+    <div class="form-group col-md-4">
+      <select id="inputState" class="form-control">
+        <option value="" disabled selected>Välj butik</option>
+        <option>...</option>
+      </select>
+    </div>
 <?php
     $pickupcode = ob_get_clean();
     echo $pickupcode;
