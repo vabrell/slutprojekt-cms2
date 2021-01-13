@@ -15,7 +15,7 @@ class Pickup
     <h1>God dag</h1>
 <?php
     $pickupcode = ob_get_clean();
-    return $pickupcode;
+    echo $pickupcode;
   }
 
   public function __construct()
