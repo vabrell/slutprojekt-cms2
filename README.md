@@ -11,9 +11,9 @@ Victor Abrell
 ### Todo
 
 - [ ] Webbsidan skall visa dessa eller snarliknande egenutvecklade funktioner
-  - [ ] Ett bildspel som presenterar aktuella kampanjer [Edwin]
-    * En kampanj kan representeras av en kategori med produkter [Edwin]
-    * Eller en rabattkod som ger rabatt [Edwin]
+  - [x] Ett bildspel som presenterar aktuella kampanjer
+  [x]  * En kampanj kan representeras av en kategori med produkter
+    * Eller en rabattkod som ger rabatt
   - [ ] En listning av populära produkter
 	* Populära produkter skall baseras på hur många som köpt dem
   - [ ] En listning av utvalda (_featured_) produkter 
