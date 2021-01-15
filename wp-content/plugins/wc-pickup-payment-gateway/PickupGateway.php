@@ -8,7 +8,7 @@
  **/
 
 add_filter('woocommerce_payment_gateways', 'pickup_add_gateway_class');
-function pickup_add_gateway_class()
+function pickup_add_gateway_class($gateways)
 {
   $gateways[] = 'PickupGateway';
   return $gateways;
