@@ -70,6 +70,28 @@ function pickup_init_gateway_class()
           ]
         ];
       }
+      public function payment_fields()
+      {
+        $args = [
+          'post_type' => 'butiker',
+          'post_status' => 'publish',
+          'posts_per_page' => 8,
+          'orderby' => 'title',
+          'order' => 'ASC'
+        ];
+        $loop = new WP_Query($args);
+?>
+        <div class="form-group col-md-4">
+          <select id="inputState" class="form-control">
+            <option value="" disabled selected>Välj butik</option>
+            <?php while ($loop->have_posts()) {
+              $loop->the_post(); ?>
+              <option><?php print the_title();  ?></option>
+            <?php } ?>
+          </select>
+        </div>
+<?php
+      }
     }
   }
 }
