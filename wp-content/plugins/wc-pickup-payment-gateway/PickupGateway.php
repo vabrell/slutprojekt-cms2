@@ -7,56 +7,69 @@
  * Description: Option to pick up product at store
  **/
 
-if (class_exists('WooCommerce')) {
-  class PickupGatway extends WC_Payment_Gateway
-  {
-    public function __construct()
+add_filter('woocommerce_payment_gateways', 'pickup_add_gateway_class');
+function pickup_add_gateway_class()
+{
+  $gateways[] = 'PickupGateway';
+  return $gateways;
+}
+
+add_action('plugins_loaded', 'pickup_init_gateway_class');
+function pickup_init_gateway_class()
+{
+
+  if (class_exists('WooCommerce')) {
+    class PickupGateway extends WC_Payment_Gateway
     {
-      $this->id = 'wcpp_pickup';
-      $this->icon = '';
-      $this->has_fields = true;
-      $this->method_title = __('Pickup at store', 'wcpp');
-      $this->method_description = __('Use the Pickup at store method', 'wcpp');
+      public function __construct()
+      {
+        $this->id = 'pickup';
+        $this->icon = '';
+        $this->has_fields = true;
+        $this->method_title = 'Pickup at store';
+        $this->method_description = 'Use the Pickup at store method';
 
-      $this->supports = array(
-        'products'
-      );
+        $this->supports = [
+          'products'
+        ];
 
-      $this->init_settings();
-      $this->title = $this->get_option('title');
-      $this->description = $this->get_option('description');
-      $this->enabled = $this->get_option('enabled');
-      $this->warehouseLocation = $this->get_option('warehouseLocation');
+        $this->init_form_fields();
 
-      $this->init_form_fields();
+        $this->init_settings();
+        $this->title = $this->get_option('title');
+        $this->description = $this->get_option('description');
+        $this->enabled = $this->get_option('enabled');
+        $this->warehouseLocation = $this->get_option('warehouseLocation');
 
-      add_action('woocommerce_update_options_payment_gateways_' . $this->id, array($this, 'process_admin_options'));
-    }
 
-    function init_form_fields()
-    {
-      $this->form_fields = [
-        'enabled' => [
-          'title' => __('Enable/Disable', 'wcpp'),
-          'label' => __('Enable Pickup Gateway', 'wcpp'),
-          'type' => 'checkbox',
-          'description' => '',
-          'default' => 'no'
-        ],
-        'title' => [
-          'title' => __('Title', 'wcpp'),
-          'type' => 'text',
-          'description' => __('This controls the title which the user sees during checkout', 'wcpp'),
-          'default' => 'Pickup',
-          "desc_tip"    => true
-        ],
-        'description' => [
-          'title' => __('Description', 'wcpp'),
-          'type' => 'textarea',
-          'description' => __('This controls the description which the user sees during checkout', 'wcpp'),
-          'default' => 'Pay when you pick up at store'
-        ]
-      ];
+        add_action('woocommerce_update_options_payment_gateways_' . $this->id, array($this, 'process_admin_options'));
+      }
+
+      public function init_form_fields()
+      {
+        $this->form_fields = [
+          'enabled' => [
+            'title' => 'Enable/Disable',
+            'label' => 'Enable Pickup Gateway',
+            'type' => 'checkbox',
+            'description' => '',
+            'default' => 'no'
+          ],
+          'title' => [
+            'title' => 'Title',
+            'type' => 'text',
+            'description' => 'This controls the title which the user sees during checkout',
+            'default' => 'Pickup',
+            "desc_tip"    => true
+          ],
+          'description' => [
+            'title' => 'Description',
+            'type' => 'textarea',
+            'description' => 'This controls the description which the user sees during checkout',
+            'default' => 'Pay when you pick up at store'
+          ]
+        ];
+      }
     }
   }
 }
