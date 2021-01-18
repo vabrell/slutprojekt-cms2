@@ -26,8 +26,8 @@ function pickup_init_gateway_class()
         $this->id = 'pickup';
         $this->icon = '';
         $this->has_fields = true;
-        $this->method_title = 'Pickup at store';
-        $this->method_description = 'Use the Pickup at store method';
+        $this->method_title = 'Hämta upp i butik';
+        $this->method_description = 'Använd metoden för att hämta upp i butik';
 
         $this->supports = [
           'products'
@@ -39,7 +39,8 @@ function pickup_init_gateway_class()
         $this->title = $this->get_option('title');
         $this->description = $this->get_option('description');
         $this->enabled = $this->get_option('enabled');
-        $this->warehouseLocation = $this->get_option('warehouseLocation');
+        $this->deliveryFee = $this->get_option('deliveryFee');
+        $this->freeDelivery = $this->get_option('freeDelivery');
 
 
         add_action('woocommerce_update_options_payment_gateways_' . $this->id, array($this, 'process_admin_options'));
@@ -49,35 +50,35 @@ function pickup_init_gateway_class()
       {
         $this->form_fields = [
           'enabled' => [
-            'title' => 'Enable/Disable',
-            'label' => 'Enable Pickup Gateway',
+            'title' => 'Av/På',
+            'label' => 'Aktivera Pickup Gateway',
             'type' => 'checkbox',
             'description' => '',
             'default' => 'no'
           ],
           'title' => [
-            'title' => 'Title',
+            'title' => 'Titel',
             'type' => 'text',
-            'description' => 'This controls the title which the user sees during checkout',
+            'description' => 'Detta kontrollerar titeln användaren ser i kassan',
             'default' => 'Pickup',
             "desc_tip"    => true
           ],
           'description' => [
-            'title' => 'Description',
+            'title' => 'Beskrivning',
             'type' => 'textarea',
-            'description' => 'This controls the description which the user sees during checkout',
-            'default' => 'Pay when you pick up at store'
+            'description' => 'Detta kontrollerar beskrivningen användaren ser i kassan',
+            'default' => 'Betala när du hämtar i butik'
           ],
           'deliveryFee' => [
-            'title' => 'Price',
+            'title' => 'Leveranskostnad',
             'type' => 'number',
-            'description' => 'This sets the set price for the delivery',
+            'description' => 'Detta kontrollerar leveranskostnaden',
             'default' => 0
           ],
           'freeDelivery' => [
-            'title' => 'Free delivery',
+            'title' => 'Gratis leverans',
             'type' => 'number',
-            'description' => 'This controls the price for free delivery',
+            'description' => 'Detta kontrollerar priset för gratis leverans',
             'default' => 0
           ]
         ];
