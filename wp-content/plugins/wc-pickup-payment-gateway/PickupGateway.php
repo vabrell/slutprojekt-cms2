@@ -67,6 +67,18 @@ function pickup_init_gateway_class()
             'type' => 'textarea',
             'description' => 'This controls the description which the user sees during checkout',
             'default' => 'Pay when you pick up at store'
+          ],
+          'deliveryFee' => [
+            'title' => 'Price',
+            'type' => 'number',
+            'description' => 'This sets the set price for the delivery',
+            'default' => 0
+          ],
+          'freeDelivery' => [
+            'title' => 'Free delivery',
+            'type' => 'number',
+            'description' => 'This controls the price for free delivery',
+            'default' => 0
           ]
         ];
       }
