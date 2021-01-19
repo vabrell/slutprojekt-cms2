@@ -13,25 +13,15 @@ $loop = new WP_Query($args); ?>
 
 <h1>Våra butiker</h1>
 
-<!-- <table class="table">
-  <tbody> -->
 <div class="container">
-  <!-- <div class="list-group list-group-horizontal">
-    <div class="d-flex align-content-around flex-wrap"> -->
   <div class="row my-1">
     <?php
     while ($loop->have_posts()) {
       $loop->the_post(); ?>
-      <div class="text-center col-4">
-        <div class=" mx-3"><a class="text-dark" href="<?php echo get_the_permalink(); ?>"><?php print the_title();  ?></a></div>
-      </div>
-    <?php
-
-    } ?>
-    <!-- </tbody>
-</table> -->
-    <!-- </div>
-  </div> -->
+      <a href="<?php the_permalink(); ?>" class="text-center col-4 border">
+        <div class="mx-3"><?php print the_title();  ?></div>
+      </a>
+    <?php } ?>
   </div>
 </div>
 
