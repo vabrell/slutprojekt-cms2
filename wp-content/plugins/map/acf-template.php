@@ -1,5 +1,8 @@
 <?php
-if (function_exists('acf_add_local_field_group')) :
+
+if (
+  function_exists('acf_add_local_field_group')
+) :
 
   acf_add_local_field_group(array(
     'key' => 'group_5fce99ac46fc2',
@@ -136,6 +139,13 @@ if (function_exists('acf_add_local_field_group')) :
           'param' => 'options_page',
           'operator' => '==',
           'value' => 'karta',
+        ),
+      ),
+      array(
+        array(
+          'param' => 'post_type',
+          'operator' => '==',
+          'value' => 'butiker',
         ),
       ),
     ),
