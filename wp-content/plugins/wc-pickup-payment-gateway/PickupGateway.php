@@ -43,7 +43,7 @@ function pickup_init_gateway_class()
         $this->freeDelivery = $this->get_option('freeDelivery');
 
 
-        add_action('woocommerce_update_options_payment_gateways_' . $this->id, array($this, 'process_admin_options'));
+        add_action('woocommerce_update_options_payment_gateways_' . $this->id, [$this, 'process_admin_options']);
       }
 
       public function init_form_fields()
@@ -112,7 +112,7 @@ function pickup_init_gateway_class()
         global $woocommerce;
         $order = wc_get_order($order_id);
         wc_reduce_stock_levels($order_id);
-        $order->add_order_note('Tack för din beställning! Varan går nu att hämta i vald butik.', true);
+        $order->add_order_note('Tack för din beställning!', true);
         $woocommerce->cart->empty_cart();
         return [
           'result' => 'success',

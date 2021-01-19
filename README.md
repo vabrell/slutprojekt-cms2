@@ -26,8 +26,8 @@ Victor Abrell
   - [ ] Inläggen skall ha länkar till relaterade produkter
 - [ ] Bygg ett till eget leveras plugin [David]
   - E-handeln skall ha ett leveransalternativ för att _hämta upp leverans i butik_
-    - [ ] I kassan skall man kunna välja i vilken butik man vill hämta ut sin order
-    - [ ] I butikerna som kan väljas skall vara samma som listas på sidan med företagets butiker
+    - [x] I kassan skall man kunna välja i vilken butik man vill hämta ut sin order
+    - [x] I butikerna som kan väljas skall vara samma som listas på sidan med företagets butiker
     - [ ] Detta leveransalternativ skall vara gratis vid order över ett visst belopp. Det skall gå att ställa in vilket belopp som gäller
     - [ ] Om man inte överstiger belopper skall leveransalternativet kosta och leveransavgiften skall gå att ställa in i admin
 - [ ] Test av e-handel
