@@ -119,6 +119,14 @@ function pickup_init_gateway_class()
           'redirect' => $this->get_return_url($order)
         ];
       }
+      public function getShippingPrice()
+      {
+        $totals = WC()->cart->get_cart_contents_total();
+        $free = $this->get_option('freeDelivery');
+        if ($totals > $free) {
+          $this->get_option('deliveryFee') === 0;
+        }
+      }
     }
   }
 }
