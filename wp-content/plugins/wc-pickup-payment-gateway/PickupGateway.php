@@ -107,6 +107,18 @@ function pickup_init_gateway_class()
         </fieldset>
 <?php
       }
+      public function process_payment($order_id)
+      {
+        global $woocommerce;
+        $order = wc_get_order($order_id);
+        wc_reduce_stock_levels($order_id);
+        $order->add_order_note('Tack för din beställning! Varan går nu att hämta i vald butik.', true);
+        $woocommerce->cart->empty_cart();
+        return [
+          'result' => 'success',
+          'redirect' => $this->get_return_url($order)
+        ];
+      }
     }
   }
 }
