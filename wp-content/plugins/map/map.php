@@ -7,7 +7,7 @@
  * Description: Display map
  **/
 
-// require 'acf-template.php';
+require 'acf-template.php';
 
 class Map
 {
