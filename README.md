@@ -24,12 +24,6 @@ Victor Abrell
 - [ ] Det skall finnas en blogg där företaget publicerar inlägg om nya och kommande produkter
   - [ ] Fyll på med 5 inlägg
   - [ ] Inläggen skall ha länkar till relaterade produkter
-- [ ] Bygg ett till eget leveras plugin [David]
-  - E-handeln skall ha ett leveransalternativ för att _hämta upp leverans i butik_
-    - [x] I kassan skall man kunna välja i vilken butik man vill hämta ut sin order
-    - [x] I butikerna som kan väljas skall vara samma som listas på sidan med företagets butiker
-    - [ ] Detta leveransalternativ skall vara gratis vid order över ett visst belopp. Det skall gå att ställa in vilket belopp som gäller
-    - [ ] Om man inte överstiger belopper skall leveransalternativet kosta och leveransavgiften skall gå att ställa in i admin
 - [ ] Test av e-handel
   - [ ] Genomför minst 10 test köp med varje betalningsmotod och leveransalternativ
 - [ ] En manual
@@ -84,3 +78,9 @@ Victor Abrell
 - [x] Det skall finnas en sida som listar företagets butiker [David]
   - [x] Butikerna skall skapas med hjälp av en _Custom Post Type_
   - [x] I redigeringsläge ska det finnas ett fält för plats, och på sidan för butiken skll man kunna se var butiken är på en karta
+- [x] Bygg ett till eget leveras plugin [David]
+  - E-handeln skall ha ett leveransalternativ för att _hämta upp leverans i butik_
+    - [x] I kassan skall man kunna välja i vilken butik man vill hämta ut sin order
+    - [x] I butikerna som kan väljas skall vara samma som listas på sidan med företagets butiker
+    - [x] Detta leveransalternativ skall vara gratis vid order över ett visst belopp. Det skall gå att ställa in vilket belopp som gäller
+    - [x] Om man inte överstiger belopper skall leveransalternativet kosta och leveransavgiften skall gå att ställa in i admin
