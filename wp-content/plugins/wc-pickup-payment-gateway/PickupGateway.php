@@ -15,6 +15,21 @@ function pickup_add_gateway_class($gateways)
 }
 
 add_action('plugins_loaded', 'pickup_init_gateway_class');
+
+add_action("woocommerce_cart_calculate_fees", function () {
+  if (is_admin() && !defined("DOING_AJAX")) {
+    return;
+  }
+  
+  $gateway = new PickupGateway;​​​​​
+  $shippingPrice = $gateway->getShippingPrice((int)WC()->cart->total);
+
+  $chosen_payment_method = WC()->session->get("chosen_payment_method");
+  if ($chosen_payment_method == "pickup") {
+    WC()->cart->add_fee("Upphämtningsavgift", $shippingPrice);
+  }
+});
+
 function pickup_init_gateway_class()
 {
 
@@ -100,12 +115,16 @@ function pickup_init_gateway_class()
               <option value="" disabled selected>Välj butik</option>
               <?php while ($loop->have_posts()) {
                 $loop->the_post(); ?>
-                <option><?php print the_title();  ?></option>
+                <option><?php print the_title(); ?></option>
               <?php } ?>
             </select>
           </div>
         </fieldset>
 <?php
+        echo '<pre>';
+        var_dump((int)$this->freeDelivery);
+        var_dump((int)WC()->cart->total);
+        echo '</pre>';
       }
       public function process_payment($order_id)
       {
@@ -119,12 +138,15 @@ function pickup_init_gateway_class()
           'redirect' => $this->get_return_url($order)
         ];
       }
-      public function getShippingPrice()
+      public function getShippingPrice($totals)
       {
-        $totals = WC()->cart->get_cart_contents_total();
-        $free = $this->get_option('freeDelivery');
+        return $totals;
+        $totals = (int)WC()->cart->total;
+        $free = (int)$this->freeDelivery;
         if ($totals > $free) {
-          $this->get_option('deliveryFee') === 0;
+          return 0;
+        } else {
+          return $this->deliveryFee;
         }
       }
     }
