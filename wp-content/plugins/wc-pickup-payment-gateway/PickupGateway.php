@@ -21,13 +21,18 @@ add_action("woocommerce_cart_calculate_fees", function () {
     return;
   }
   
-  $gateway = new PickupGateway;​​​​​
-  $shippingPrice = $gateway->getShippingPrice((int)WC()->cart->total);
-
-  $chosen_payment_method = WC()->session->get("chosen_payment_method");
-  if ($chosen_payment_method == "pickup") {
-    WC()->cart->add_fee("Upphämtningsavgift", $shippingPrice);
+  $gateway = new PickupGateway;
+  $totals = WC()->session->get('cart_totals')["total"];
+  $free = $gateway->freeDelivery;
+  $compare = (int) $totals < (int) $free;
+    
+  if ($compare) {
+    $chosen_payment_method = WC()->session->get("chosen_payment_method");
+    if ($chosen_payment_method == "pickup") {
+      WC()->cart->add_fee("Upphämtningsavgift", $gateway->deliveryFee);
+    }
   }
+
 });
 
 function pickup_init_gateway_class()
@@ -121,10 +126,6 @@ function pickup_init_gateway_class()
           </div>
         </fieldset>
 <?php
-        echo '<pre>';
-        var_dump((int)$this->freeDelivery);
-        var_dump((int)WC()->cart->total);
-        echo '</pre>';
       }
       public function process_payment($order_id)
       {
@@ -137,17 +138,6 @@ function pickup_init_gateway_class()
           'result' => 'success',
           'redirect' => $this->get_return_url($order)
         ];
-      }
-      public function getShippingPrice($totals)
-      {
-        return $totals;
-        $totals = (int)WC()->cart->total;
-        $free = (int)$this->freeDelivery;
-        if ($totals > $free) {
-          return 0;
-        } else {
-          return $this->deliveryFee;
-        }
       }
     }
   }
