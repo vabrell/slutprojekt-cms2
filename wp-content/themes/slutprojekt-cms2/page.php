@@ -57,7 +57,125 @@ if (have_posts()) {
 } else {
 	the_content();
 }
+ ?>
+<?php
+	// Best sellers
+
+    $args = array(
+    'post_type' => 'product',
+    'posts_per_page' => 6, //Antal produkter som visas. 
+        'meta_key' => 'total_sales', //Antalet sålda av en specifik produkt. 
+        'orderby' => 'meta_value_num', 
+    );
+    ?>
+<div class="container">
+    <h1> Bästsäljare </h1>
+    <div class="row">
+			
+			<?php $loop = new WP_Query( $args );
+			while ( $loop->have_posts() ) { $loop->the_post(); global $product; ?>
+			<div class="col-3">
+				<div class="card mb-3" style="width: 16rem; height:30rem">
+					<div class="card-body">
+						<a id="id-
+							<?php the_id();?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+
+							<?php 
+							if (has_post_thumbnail( $loop->post->ID )) { echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); 
+							}?>
+							<h3 class="card-title"><?php the_title(); ?></h3>
+							<?php echo $product->get_price_html(); ?>
+						</a>
+						<div class="d-flex align-items-end">
+							<?php woocommerce_template_loop_add_to_cart( $loop->post, $product ); ?>
+						</div>
+					</div>
+				</div>
+		</div>
+		<?php } ?>
+		<?php wp_reset_query(); ?>
+    </div>
+</div>
+
+
+<?php
+	// REA products
+
+    $args = array(
+    'post_type' => 'product',
+    'posts_per_page' => 6, //Antal produkter som visas. 
+        'meta_key' => 'total_sales', //Antalet sålda av en specifik produkt. 
+        'orderby' => 'meta_value_num', 
+    
+    );
+    ?>
+
+<div class="container">
+    <h1>REA produkter</h1>
+    <div class="row">
+        <?php $loop = new WP_Query( $args );
+					while ( $loop->have_posts() ) { $loop->the_post(); global $product; 
+						if($product->is_on_sale()) { ?>
+							<div class="col-3">
+								<div class="card mb-3" style="width: 16rem; height:30rem">
+									<div class="card-body">
+									<a id="id-
+									<?php the_id();?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+
+									<?php 
+										if (has_post_thumbnail( $loop->post->ID )) { 
+											echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); 
+										}
+										?>
+										<h3 class="card-title"><?php the_title(); ?></h3>
+										<?php echo $product->get_price_html(); ?>
+								</a>
+								<div class="d-flex align-items-end">
+									<?php woocommerce_template_loop_add_to_cart( $loop->post, $product ); ?>
+								</div>
+								</div>
+							</div>
+						</div>
+					<?php	}	?>
+				<?php } ?>
+        <?php wp_reset_query(); ?>
+    </div>
+</div>
+
+<?php 
+ // featured products
 ?>
+<div class="container">
+    <h1 class="">Kommande produkter</h1>
+    <div class="row">
+			<?php
+				 if(have_rows('featured_products')) {
+					$get_featured_products = get_field('featured_products');
+						foreach($get_featured_products as $value) {
+							echo "<div class=\"col-3\">";
+								echo "<div class=\"card mb-3\" style=\"width: 16rem; height:30rem\">";
+									echo "<div class=\"card-body\">";
+										echo get_the_post_thumbnail($value->ID, [200, 200]);
+										echo "<h3 class=\"card-title\">$value->post_title</h3>";
+									echo "</div>"; 
+								echo "</div>"; 
+							echo "</div>"; 
+						}
+				 }
+			?>
+		 </div>
+</div>
+
+
 
 <?php
 get_footer();
+
+// <div class="card" style="width: 18rem;">
+//   <img class="card-img-top" src="..." alt="Card image cap">
+//   <div class="card-body">
+//     <h5 class="card-title">Card title</h5>
+//     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+//     <a href="#" class="btn btn-primary">Go somewhere</a>
+//   </div>
+// </div>
