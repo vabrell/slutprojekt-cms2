@@ -45,6 +45,25 @@ add_action('init', 'butiker');
  */
 add_theme_support("menus");
 
+add_action('acf/init', 'my_acf_init_blocks');
+function my_acf_init_blocks() {
+
+    // Kollar ifall functionen finns.
+    if( function_exists('acf_register_block_type') ) {
+
+        // Gör ett block.
+        acf_register_block_type(array(
+            'name'              => 'sort-by-purchased',
+            'title'             => 'sort by purchased',
+            'description'       => 'A function that sort products based on the amount purchased.',
+            'category'          => 'formatting',
+            'render_template' => 'template-parts/blocks/sort-by-purchased.php',
+            )
+            
+          );
+    }
+}
+
 /**
  * Bildspel
  */
