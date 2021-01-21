@@ -11,14 +11,7 @@ Victor Abrell
 ### Todo
 
 - [ ] Webbsidan skall visa dessa eller snarliknande egenutvecklade funktioner
-  - [x] Ett bildspel som presenterar aktuella kampanjer
-  [x]  * En kampanj kan representeras av en kategori med produkter
-    * Eller en rabattkod som ger rabatt
-  - [x] En listning av populära produkter
-	* Populära produkter skall baseras på hur många som köpt dem
-  - [ ] En listning av utvalda (_featured_) produkter 
-  - [ ] En listning av produkter som för tillfället har reapris 
-	* De skall visas med reapris och ordinarie pris
+ 
   - [ ] En puff för det senaste inlägget från bloggen
 - [ ] Det skall finnas en sida med villkor och regler
 - [ ] Det skall finnas en blogg där företaget publicerar inlägg om nya och kommande produkter
@@ -40,6 +33,14 @@ Victor Abrell
   - [ ] Bilder skall använda sig av tumnaglar i lagom storlek, så att inte onödigt tunga bilder laddas in
 
 ### Klart
+ - [x] Ett bildspel som presenterar aktuella kampanjer
+  [x]  * En kampanj kan representeras av en kategori med produkter
+    * Eller en rabattkod som ger rabatt
+  - [x] En listning av populära produkter
+	* Populära produkter skall baseras på hur många som köpt dem
+  - [x] En listning av utvalda (_featured_) produkter 
+  - [x] En listning av produkter som för tillfället har reapris 
+	* De skall visas med reapris och ordinarie pris
 - [x] Vilka typer av produkter skall butiken sälja?
   - Musikinstrument
 - [x] Ställ in så att e-handeln har moms enligt svenska regler [Victor]
