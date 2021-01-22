@@ -75,8 +75,8 @@ if (have_posts()) {
 		while ( $loop->have_posts() ) { $loop->the_post(); global $product; ?>
 		<div class="col-3">
 			<div class="card mb-3" style="width: 16rem; height:30rem">
-				<div class="card-body">
-					<a id="id-
+				<div class="card-body d-flex flex-column mb-4">
+					<a class="col-12" id="id-
 						<?php the_id();?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 
 						<?php 
@@ -85,9 +85,9 @@ if (have_posts()) {
 						<h3 class="card-title"><?php the_title(); ?></h3>
 						<?php echo $product->get_price_html(); ?>
 					</a>
-					<div class="d-flex align-items-end">
+					<span class="col-12 align-self-end">
 						<?php woocommerce_template_loop_add_to_cart( $loop->post, $product ); ?>
-					</div>
+					</span>
 				</div>
 			</div>
 		</div>
@@ -115,8 +115,8 @@ if (have_posts()) {
 			if($product->is_on_sale()) { ?>
 				<div class="col-3">
 					<div class="card mb-3" style="width: 16rem; height:30rem">
-						<div class="card-body">
-						<a id="id-
+						<div class="card-body d-flex flex-column mb-4">
+						<a class="col-12" id="id-
 						<?php the_id();?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 
 						<?php 
@@ -127,7 +127,7 @@ if (have_posts()) {
 							<h3 class="card-title"><?php the_title(); ?></h3>
 							<?php echo $product->get_price_html(); ?>
 					</a>
-					<div class="d-flex align-items-end">
+					<div class="col-12 align-self-end">
 						<?php woocommerce_template_loop_add_to_cart( $loop->post, $product ); ?>
 					</div>
 					</div>
